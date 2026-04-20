@@ -18,13 +18,29 @@
         <div class ="bg-blue-200 p-6 rounded shadow">
             <h2 class="text-2xl font-bold text-center mb-2 ">Array Manipulation Example</h2>
             <div class ="flex items-stretch gap-4">
-                <input type="text" id="arrayInput" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas">
-                <button class =btn-indigo>Add Element</button>
-                <button class =btn-indigo>Remove First</button>
-                <button class =btn-indigo>Remove Last</button>
+                <div class="flex flex-col gap-2">
+                <label for="arrayinput" class="mb-2 font-bold">Enter array elements:</label>
+                <input type="text" id="arrayinput" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas" required>
+                <label for="myselect" class="mb-2 font-bold">Select an option:</label>
+                <select id="myselect" class="p-2 mb-4 border rounded">
+                    <option value="" disabled selected>Select an option</option>
+                </select>
+                </div>
+                
+                <div class ="flex flex-col gap-2">
+                <button class ="btn-indigo" id ="btnadd-tl">Add Element Template Literal</button>
+                <button class ="btn-indigo" id ="btnadd-ap">Add Element Append</button>
+                </div>
+                
+                <button class ="btn-indigo" id ="btnremovefirst">Remove First</button>
+                <button class ="btn-indigo" id ="btnremovelast">Remove Last</button>
             </div>    
            
         </div>
+    </div>
+    <div id="arraydisplay" class="mt-4 p-4 bg-white rounded shadow">
+        <h2 class="text-xl font-bold mb-2">Array Display:</h2>
+        <br>
     </div>
     <!--<pre><code class="language-java">-->
 
