@@ -1,0 +1,23 @@
+.btn-indigo {
+  /* Layout & Spacing */
+  display: inline-block;
+  padding: 0.25rem 0.75rem; /* py-1 px-3 */
+  font-size: 0.875rem;       /* text-sm */
+  
+  /* Typography */
+  font-weight: 600;          /* font-semibold */
+  color: #4338ca;            /* text-indigo-700 */
+  
+  /* Borders & Shape */
+  background-color: #e0e7ff; /* bg-indigo-100 */
+  border: 1px solid #c7d2fe; /* border border-indigo-300 */
+  border-radius: 0.25rem;    /* rounded */
+  
+  /* Interaction */
+  transition: all 0.15s ease-in-out; /* transition */
+  cursor: pointer;
+}
+
+.btn-indigo:hover {
+  background-color: #c7d2fe; /* hover:bg-indigo-200 */
+}
