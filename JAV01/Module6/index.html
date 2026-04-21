@@ -3,46 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Essentials 6.1 Manipulating Arrays</title>
+    <title>Javascript Essentials 6.1 Manipulating Arrays</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    
 
 </head>
 <body class="bg-gray-200">
 
-    <h1 class="text-3xl text-center font-bold m-4">Java Essentials 6.1 Manipulating Arrays</h1>
+    <h1 class="text-3xl text-center font-bold m-4">Javascript Essentials 6.1 Manipulating Arrays</h1>
     <p class="mb-4 text-center">In this page, I have written code to manipulate arrays in Java. It is an example of various operations such as adding, removing, and modifying elements in an array.</p>   
-    <p>Testing Git</p>
+    <!--Control Box-->
     <div class="flex justify-center  p-4 rounded shadow">
         <div class ="bg-blue-200 p-6 rounded shadow">
             <h2 class="text-2xl font-bold text-center mb-2 ">Array Manipulation Example</h2>
             <div class ="flex items-stretch gap-4">
                 <div class="flex flex-col gap-2">
-                <label for="arrayinput" class="mb-2 font-bold">Enter array elements:</label>
-                <input type="text" id="arrayinput" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas" required>
-                <label for="myselect" class="mb-2 font-bold">Select an option:</label>
-                <select id="myselect" class="p-2 mb-4 border rounded">
+                <label for="array-input" class="mb-2 font-bold">Enter array elements:</label>
+                <input type="text" id="array-input" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas" required>
+                <label for="my-select" class="mb-2 font-bold">Select an option:</label>
+                <select id="my-select" class="p-2 mb-4 border rounded">
                     <option value="" disabled selected>Select an option</option>
                 </select>
                 </div>
                 
                 <div class ="flex flex-col gap-2">
-                <button class ="btn-indigo" id ="btnadd-tl">Add Element Template Literal</button>
-                <button class ="btn-indigo" id ="btnadd-ap">Add Element Append</button>
+                    <button type="button" class ="btn-indigo" id ="btn-add-list">Add Initial List</button>
+                    <button type="button" class ="btn-indigo" id ="btn-add-tl">Add Element Template Literal</button>
+                    <button type = "button" class ="btn-indigo" id ="btn-add-ap">Add Element Append</button>
                 </div>
-                
-                <button class ="btn-indigo" id ="btnremovefirst">Remove First</button>
-                <button class ="btn-indigo" id ="btnremovelast">Remove Last</button>
+
+                <div class="flex flex-col gap-2">
+                    <button type = "button" class ="btn-indigo" id ="btn-remove-first">Remove First</button>
+                    <button type = "button" class ="btn-indigo" id ="btn-remove-last">Remove Last</button>
+                </div>
             </div>    
            
         </div>
     </div>
-    <div id="arraydisplay" class="mt-4 p-4 bg-white rounded shadow">
-        <h2 class="text-xl font-bold mb-2">Array Display:</h2>
-        <br>
+    
+    <!--Array containers left text right table-->
+    <div id="class-containers" class="flex w-full">
+        <!--Text version of array-->
+        <div id="array-display" class="flex-1 grid grid-cols-2 gap-4 mt-4 p-4 bg-white rounded shadow">
+            <h2 class="text-xl font-bold mb-2">Array Display:</h2>
+            <br>
+        </div>
+        <!--Table containing the same array parts but NOT populated by the array. Table styled by CSS-->
+        <div id="table-container" class="flex-1 mt-4 p-4 bg-white rounded shadow">
+            <h2 class="text-xl font-bold mb-2">Table displaying array results but NOT populated directly from the array</h2>
+            <table class="array-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--populated by Javascript-->
+                </tbody>
+            </table>
+        </div>
     </div>
     <!--<pre><code class="language-java">-->
+
+        <div class="grid grid-cols-2 gap-4">
+            <span >Name: Lord of the Rings</span>
+            <span >Genre: Fantasy</span>
+
+        </div>
 
 </body>
 </html>
