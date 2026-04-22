@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile Page</title>
+    <style>
+        /*Body styling*/
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width:800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        /*Styling the headings*/
+        h1 {
+            color:#2c3e50;
+            text-align: center;
+        }
+        /*Make image responsive for different screen sizes and center and soften corners.
+        it also changes it to a block element which helps with layout*/
+        img {
+            max-width: 100%;
+            height:auto;
+            display:block;
+            margin:20px auto;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        /*standard line height is 1.2. Changed to 1.6 which is considered a better option. 
+        color is softened for eye fatigue*/
+        p {
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to my profile</h1>
+    <img src="https://placecats.com/300/200" alt="Profile Picture">
+    <h2>About Me</h2>
+    <p>Hello I am learning web development. 
+        This is my first webpage where I am practicing HTML and CSS.</p>
+
+    <h2>My Favorite Websites</h2>
+
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href= "https://developer.mozilla.org" target="_blank">mdn Docs</a> </li>
+
+        </ul>
+    
+    
+    
+</body>
+</html>

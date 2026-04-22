@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /*navigation styling*/
+        .nav-container {
+
+            background-color: #333;
+            padding: 1rem 0; /*1rem is 8px*/ 
+            position: sticky;
+            top: 0;
+            z-index: 1000; /*ensures nav stays on top*/
+
+        }
+
+        .main-nav ul {
+
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+
+        }
+
+        .main-nav a {
+
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav:hover {
+
+            color: #ffd700;
+        }
+
+        /*header styling*/
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content Styling replaced by Tailwind 
+        
+        .main-content {
+            
+            width: 100%;
+            padding: 0 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        
+        @media (min-width: 768px) {
+            .main-container {
+                display: flex;
+                gap: 2rem;
+                padding: 0 2rem; 
+                
+        }
+        */
+        /* Tailwind bg-white p-8 mb-8 rounded-lg shadow-sm*/
+        .about-section, .services-section, .contact-section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color:#333;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        /*text formatting*/
+        .highlight {
+            background-color: #ffd700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+        }
+
+        em {
+            color: #666;
+            font-style: italic;
+
+        }
+        
+
+        .email{
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        /*footer stying*/
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <!--Navigation Section-->
+    <div class="nav-container">
+        <nav class ="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    
+    <!--Header Section-->
+
+    <div class="header">
+        <h1>Welcome to My Website</h1>
+        <p class="subtitle">Learning <em>HTML</em> and <em>CSS</em></p>
+    </div>
+
+    
+    <!--Main Content Section-->
+    <div class="mx-auto px-4 w-full max-w-3xl ">
+        <div class="about-section" id="about">
+            <h2>About Us</h2>
+            <p>Welcome to our website! Here you'll find <span style ="font-size: 1.2em;">amazing content</span>          about
+            web development</p>
+        </div>
+   
+
+    <div class="services-section" id="services">
+            <h2>Our Services</h2>
+            <p>We specialize in:</p>
+            <ul>
+                <li><span class="highlight">Web Design</span></li>
+                <li><em>Content Creation</em></li>
+                <li><strong>Digital Marketing</strong></li>
+            </ul>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch: <span class="email">jongreenspan37@gmail.com</span></p>
+        </div>
+     
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 My Website</p>
+    </div>
+
+</body>
+</html>
