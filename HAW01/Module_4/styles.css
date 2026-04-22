@@ -1,0 +1,94 @@
+/*Basic rest*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6rem;
+    background-color: #f4f4f4;
+}
+
+/*Header and Navigation*/
+
+header {
+    position:sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: ffffff;
+}
+
+
+
+header h1 {
+    text-align: center;
+    color:#333;
+    padding:2rem 0;
+}
+
+header p {
+    text-align: center;
+}
+
+.nav-top{
+   
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+.nav-side{
+    height: 100vh;      /* Full screen height */
+    width: 150px;       /* Fixed width */
+    position: fixed;    /* Lock it in place */
+    top: 0;
+    left: 0;
+    background-color: #333;
+    border-right: 2px solid #4f46e5; /* Professional indigo border */
+    padding: 2rem 1rem;
+    z-index: 100;  
+}
+
+.ul-nav-top {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    list-style: none;
+}
+
+.ul-nav-side{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    list-style: none;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color:white;
+    padding: 0.5rem 1rem; 
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/*Main Element Styling*/
+
+main {
+    margin-left: 250px;
+    max-width: 800px;
+
+}
+
+footer {
+    text-align: center;
+    position:sticky;
+    bottom: 0;
+    z-index: 1000;
+}

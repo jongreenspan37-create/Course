@@ -1,13 +1,17 @@
+/*basic reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Button styling*/
 .btn-indigo {
   /* Layout & Spacing */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem; /* 10px 20px*/ 
-  
-  
-  /* Typography */
-          
+  padding: 0.625rem 1.25rem; /* 10px 20px*/      
   
   /* Borders & Shape */
   background-color: #4f46e5; /* bg-indigo-600 */
