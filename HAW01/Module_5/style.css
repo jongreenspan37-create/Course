@@ -1,0 +1,122 @@
+/*reset*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header {
+    
+    position:sticky;
+    top:0;
+    background-color:#007bff ;
+    
+}
+
+header h1{
+
+    
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding:2rem;
+
+}
+
+
+
+/*Form Styling*/
+
+.contact-container{
+    margin-top: 2rem;
+    max-width:600px;
+    margin:2rem auto;
+    padding:2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-contact{
+
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display:block;
+    margin-bottom:0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width:100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button[type="submit"]{
+    background-color: #007bff;
+    color:white;
+    padding:0.75rem 1.5rem;
+    border:none;
+    border-radius: 4px;
+    cursor:pointer;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*Form validation*/
+input:valid,
+textarea:valid,
+select:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+
+
+/*Footer*/
+
+footer{
+
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+footer ul{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+}
+footer li{
+    margin: 0.25rem 0.5rem;
+    width:1.5rem;
+    height:1.5rem;
+
+}
+
+.icon{
+    padding:0.25rem;
+    width:1.5rem;
+    height:1.5rem;
+}

@@ -115,8 +115,14 @@ nav a:hover {
 }
 
 footer {
+    margin-left: 150px;
+    margin-bottom: 20px;
+    padding:2rem 1 rem;
     text-align: center;
     position:sticky;
-    bottom: 0;
+    bottom: 20px;
     z-index: 1000;
+
 }
+
+

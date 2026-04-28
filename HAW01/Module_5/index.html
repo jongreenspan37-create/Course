@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAW Module 5 - Contact Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    
+    <main>
+        <section class="contact-container">
+        
+            <form id="form-contact" action="#" method="POST">
+                <div class="form-contact">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required minlength="2">
+                </div>
+
+                <div class="form-contact">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-contact">
+                    <label for="phone">Phone No:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}">
+                </div>
+
+                <div class="form-contact">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Please select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Enquiry</option>
+                    </select>
+
+                </div>
+
+                <div class="form-contact">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+                </div>
+
+                <div class="form-contact">
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        Subscribe to our newsletter
+                    </label>
+                </div>
+
+                <div class="form-contact">
+                    <button type="submit">Send Message</button>
+                </div>
+        
+           </form>
+        
+    </section>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    
+    
+    </main>
+
+    <footer>
+        <div style="text-align: center;">@copy JRGContracts</div>
+        <ul>
+            <li><a  href="#"><img class="icon" src="instagram.png"></a></li>
+            <li><a  href="#"><img class="icon" src="x.png"></a></li>
+            <li><a  href="#"><img class="icon" src="facebook.png"></a></li>
+
+        </ul>
+
+    </footer>
+
+</body>
+
+</html>
