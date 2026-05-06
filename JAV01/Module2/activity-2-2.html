@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAV Module 2</title>
+    <title>JAVV01 Activity 2.2</title>
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing: border-box;
-        }
-
         .btn{
-            position:fixed;
-            top:20px;
-            left:20px;
+            
             padding: 0.75rem 1.5rem;
             background-color: #4f46e5;
             color: white;
@@ -27,24 +19,21 @@
 
             background-color: #4338ca;
         }
-
     </style>
+    <script src="activity2-2.js"></script>
+
 </head>
 <body>
+    <header>
+        <h1 id="heading">Starting the Javascript journey</h1>
+        <h2>This text is not affected</h2>
+        <nav>
+            <button id="btn" type="button" class="btn" onclick="changeText()">Change Text</button>
+            <button id="btn" type="button" class="btn" onclick="changeHeader()">Change text and tag</button>
+        </nav>
+    </header>
 
-    <nav>
-        <a class="btn" href = "activity-2-2.html">Activity 2.2</a>
-    </nav>
     
-    <script>
-
-        function myAlert(){
-            alert("My first Javascript");
-
-        }
-
-        myAlert()
-    </script>
-   
+    
 </body>
 </html>
