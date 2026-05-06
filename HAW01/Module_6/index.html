@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAW Module 6 - iframe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    <header class="py-4 bg-blue-400">
+        <h1 class="text-center text-3xl">Location Map</h1>
+    </header>
+    
+    <main>
+        <section class="mx-1 my-2 flex justify-center">
+            <iframe class= "mx-1 px-1" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.4831358191464!2d-1.0896841231550525!3d50.78515426320766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48745d96243008a9%3A0x82ade1335c721294!2s31%20Stanley%20St%2C%20Southsea%2C%20Portsmouth%2C%20Southsea%20PO5%202DS!5e0!3m2!1sen!2suk!4v1777387266026!5m2!1sen!2suk" 
+            title="Google Map Location"
+            width="600" 
+            height="450" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            sandbox="allow-scripts allow-same-origin allow-popups">
+            </iframe>
+        </section>
+        <section class="flex justify-center">
+            <div class="iframe-controls">
+                <button class="bg-blue-300 hover:bg-blue-400 py-1 px-3 hover:text-white text-bold rounded-md duration-300 transition" 
+                onclick="reloadFrame()">
+                Reload Content
+            </button>
+            <button class="bg-blue-300 hover:bg-blue-400 py-1 px-3 hover:text-white text-bold rounded-md duration-300 transition" 
+                onclick="toggleFullScreen()">
+                Full Screen
+            </button>
+        </div>
+        <script>
+            function reloadFrame (){
+                const frame = document.querySelector('iframe');
+                frame.src = frame.src 
+            }
+
+            function toggleFullScreen() {
+                const frame = document.querySelector('iframe');
+                if (frame.requestFullscreen) {
+                    frame.requestFullscreen();
+                }
+            }
+        </script>
+
+        </section>
+        
+    </main>
+
+    <footer class="bg-blue-400 py-2 fixed bottom-0 w-full">
+        <div class="text-center">&copy; JRGContracts 2026</div>
+        <ul class="flex justify-center">
+            <li><a href="#"></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+        </ul>
+        </ul>
+    </footer>
+</body>
+</html>

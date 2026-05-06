@@ -19,7 +19,7 @@ const btnRemoveFirst = document.getElementById("btn-remove-first");
 const btnRemoveLast = document.getElementById("btn-remove-last");
 const arrayInput = document.getElementById("array-input");
 const myDiv = document.querySelector('#array-display');
-const tableBody = document.querySelector('.array-table tbody')
+const tableBody = document.querySelector('#array-table tbody')
 
 
 
@@ -68,11 +68,13 @@ function appendBook(myInput,myDropdown){
     myDiv.append(newGenre);
     
     const newRow = tableBody.insertRow();
-    
 
+    
+    
     tableAdd(myInput,newRow);
     tableAdd(myDropdown,newRow);
-}
+    }
+
 
 //Add the intial list
 btnAddList.addEventListener('click',()=>{
@@ -86,31 +88,46 @@ btnAddList.addEventListener('click',()=>{
 //add an item to the array using template literals and display it in the div
 btnAddtl.addEventListener ("click", function() {
     //check if input is not null and meets validity requirements
-    if (arrayInput.checkValidity() && dropDown.value !== ""){
+    
+    const isNameValid = arrayInput.checkValidity() && dropDown.value !== ""
+    const isGenreValid = dropDown.value !=="";
+
+    // Toggle error for Name
+    console.log(isNameValid);
+    arrayInput.classList.toggle("input-error", !isNameValid); // Note the "!" (NOT valid)
+
+    // Toggle error for Genre
+    
+    dropDown.classList.toggle("input-error", !isGenreValid);
+        console.log(isGenreValid)
+        
+        
     //if valid, add to array and display in div using template literals
-    const myInput = arrayInput.value;
-    const myDropdown = dropDown.value;
+    if (isNameValid && isGenreValid){
+        const myInput = arrayInput.value;
+        const myDropdown = dropDown.value;
 
-    myArray.push({name: myInput, genre: myDropdown});
-    
-    
-    myDiv.innerHTML += `
-    
-            <div class = "flex grid-cols gap-2">
-                <div><span class="font-bold">Name:</span> ${myInput} </div>
-                <div><span class="font-bold">Genre:</span>  ${myDropdown} </div>
-            </div>`;
-    
-    //add data to table
-    const newRow = tableBody.insertRow();
-    
-    tableAdd(myInput,newRow);
-    tableAdd(myDropdown,newRow);
+        myArray.push({name: myInput, genre: myDropdown});
+                 
+        myDiv.innerHTML += `
+        
+                <div class = "flex grid-cols gap-2">
+                    <div><span class="font-bold">Name:</span> ${myInput} </div>
+                    <div><span class="font-bold">Genre:</span>  ${myDropdown} </div>
+                </div>`;
+        
+        //add data to table
+        const newRow = tableBody.insertRow();
+        
+        tableAdd(myInput,newRow);
+        tableAdd(myDropdown,newRow);
 
-    arrayInput.value = "";
-    dropDown.value = "";
+        arrayInput.value = "";
+        dropDown.value = "";
+    
+        }
 
-    }
+ 
 });
 
 //add an item to the array using append and display it in the div

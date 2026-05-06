@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body{
+  color:#333;
+}
+
 /*Button styling*/
 .btn-indigo {
   /* Layout & Spacing */
@@ -45,5 +49,23 @@
     outline: none;
     /*ring: 2px solid #a5b4fc; /* Indigo 300 ring */
     box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.5);
+}
+
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Add this class when a field is invalid */
+.input-error {
+    border: 2px solid #e74c3c !important;
+    background-color: #fdf2f2; /* Light red tint */
+}
+
+footer{
+  position:sticky;
+  bottom:0;
+  
 }
 

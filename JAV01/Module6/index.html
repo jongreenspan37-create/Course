@@ -10,7 +10,7 @@
     
 
 </head>
-<body class="bg-gray-200">
+<body class="flex flex-col min-h-screen">
 
     <header>
         <h1 class="text-3xl text-center font-bold m-4">Javascript Essentials 6.1 Manipulating Arrays</h1>
@@ -18,34 +18,41 @@
             It is an example of various operations such as adding, removing, and modifying elements in an array.</p>   
     </header>
    
-    <main>
+    <main class="flex-grow">
     <!--Control Box-->
     <section class="flex justify-center  p-4 rounded shadow">
-        <div class ="bg-blue-200 p-6 rounded shadow">
+        <div class ="bg-blue-200 p-6 rounded-xl shadow">
             <h2 class="text-2xl font-bold text-center mb-2 ">Array Manipulation Example</h2>
+            
             <div class ="flex items-stretch gap-4">
+                
                 <div class="flex flex-col gap-2">
-                <label for="array-input" class="mb-2 font-bold">Enter array elements:</label>
-                <input type="text" id="array-input" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas" required>
-                <label for="my-select" class="mb-2 font-bold">Select an option:</label>
-                <select id="my-select" class="p-2 mb-4 border rounded">
-                    <option value="" disabled selected>Select an option</option>
-                </select>
+                    <label for="array-input" class="mb-2 font-bold">Enter array elements:</label>
+                    <input type="text" id="array-input" class="p-2 mb-4 border rounded" placeholder="Enter array elements separated by commas" required>
+                    
+                    <label for="my-select" class="mb-2 font-bold">Select an option:</label>
+                    <select id="my-select" class="p-2 mb-4 border rounded">
+                        <option value="" disabled selected>Select an option</option>
+                    </select>
                 </div>
+            
                 
                 <div class ="flex flex-col gap-2">
-                    <button type="button" class ="btn-indigo" id ="btn-add-list">Add Initial List</button>
-                    <button type="button" class ="btn-indigo" id ="btn-add-tl">Add Element Template Literal</button>
-                    <button type = "button" class ="btn-indigo" id ="btn-add-ap">Add Element Append</button>
+                        <button type="button" class ="btn-indigo" id ="btn-add-list">Add Initial List</button>
+                        <button type="button" class ="btn-indigo" id ="btn-add-tl">Add Element Template Literal</button>
+                        <button type = "button" class ="btn-indigo" id ="btn-add-ap">Add Element Append</button>
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <button type = "button" class ="btn-indigo" id ="btn-remove-first">Remove First</button>
-                    <button type = "button" class ="btn-indigo" id ="btn-remove-last">Remove Last</button>
+                        <button type = "button" class ="btn-indigo" id ="btn-remove-first">Remove First</button>
+                        <button type = "button" class ="btn-indigo" id ="btn-remove-last">Remove Last</button>
                 </div>
-            </div>    
+            
+            </div>
+            
+        </div>    
            
-        </div>
+        
     </section>
     
     <!--Array containers left text right table-->
@@ -55,10 +62,10 @@
             <h2 class="text-xl font-bold mb-2">Array Display:</h2>
             <br>
         </div>
-        <!--Table containing the same array parts but NOT populated by the array. Table styled by CSS-->
+        <!--Table containing the same array parts but NOT populated by the array. -->
         <div id="table-container" class="flex-1 mt-4 p-4 bg-white rounded shadow">
             <h2 class="text-xl font-bold mb-2">Table displaying array results but NOT populated directly from the array</h2>
-            <table class="array-table">
+            <table id ="array-table">
                 <thead>
                     <tr>
                         <th>Position</th>
@@ -76,9 +83,10 @@
     </main>
     <!--<pre><code class="language-java">-->
 
-    <footer>
+    <footer class="text-center p-6">
         <p>&copy; 2024 jrgContracts</p>
     </footer>
+
 
 </body>
 </html>
