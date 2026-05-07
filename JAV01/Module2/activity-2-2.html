@@ -8,7 +8,7 @@
         .btn{
             
             padding: 0.75rem 1.5rem;
-            background-color: #4f46e5;
+            background-color:#007bff;
             color: white;
             border-radius: 4px;
             text-decoration: none;
@@ -17,10 +17,39 @@
 
         .btn:hover{
 
-            background-color: #4338ca;
+            background-color: #0056b3;
+        }
+
+        .space{
+            margin-top: 2rem;
+        }
+
+        .input{
+            min-width:250px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-family: sans-serif;
+            
+        }
+
+        .newdiv{
+            margin-top: 2rem;
+            font-size: 24px;
+            color: rgba(0,0,0,0.7)
+        }
+
+        .highlight{
+            color:#4f46e5;
+        }
+
+        .errorinput{
+            background-color: rgba(255,0,0,0.1);
+            border-style: solid;
+            border-width: 1px;
+            border-color: red;
         }
     </style>
-    <script src="activity2-2.js"></script>
+    <script src="activity2-2.js" defer></script>
 
 </head>
 <body>
@@ -28,10 +57,22 @@
         <h1 id="heading">Starting the Javascript journey</h1>
         <h2>This text is not affected</h2>
         <nav>
-            <button id="btn" type="button" class="btn" onclick="changeText()">Change Text</button>
-            <button id="btn" type="button" class="btn" onclick="changeHeader()">Change text and tag</button>
+            <button type="button" class="btn" onclick="changeText()">Change Text</button>
+            <button type="button" class="btn" onclick="changeHeader()">Change text and tag</button>
         </nav>
     </header>
+
+    <main>
+        <div id="numbercheck" class="space">
+            <input id="my-input" class="input" type ="text" placeholder="Type a number between 1 and 10">
+            <button id ="btn1" type="button" class="btn">Choose</button>
+        </div>
+
+        <div id ="arrayresults" class ="space">
+            <button id="arraygen" class="btn" type="button">Generate Array</button>
+        </div>
+
+    </main>
 
     
     
