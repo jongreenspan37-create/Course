@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bank Account Example</h1>
+    </header>
+    
+    <form id="accCreate" class="bankform">
+        <h2>Create Account</h2>
+        <label for=name>Name</label>
+        <input type= "text" id="name" name="userName">
+        <label for=pass>Password</label>
+        <input type= "password" id="pass" name="userPass">
+        <button type="submit" class="btn">Create Account</button>
+
+
+    </form>
+
+    <div id="account-details" class="bankform"></div>
+
+    <table id="accountdetails" class="modern-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account Number</th>
+                <th>Balance</th>
+            </tr>
+
+        </thead>
+        <tbody id="table-body">
+            
+
+        </tbody>
+    </table>
+</body>
+</html>

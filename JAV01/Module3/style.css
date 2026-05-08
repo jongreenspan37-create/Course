@@ -1,0 +1,90 @@
+*{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            max-width: 1100px;
+        }
+
+h1{
+            text-align: center;
+            
+        }
+
+.bankform  {
+        max-width:1000px;       
+        background-color: antiquewhite;
+            border-radius: 8px;
+            padding:1rem 1rem;
+            margin:2rem 2rem;
+        }
+
+.bankform h2{
+
+            padding: 2rem 0 
+
+        }
+
+.bankform label, input, button{
+            font-size: 20px;
+            border-radius:4px;
+            padding:0.25rem 0.75rem;
+        }
+
+.btn{
+            /*tailwind class="bg-indigo-100 hover:bg-indigo-200 
+            text-indigo-700 font-semibold py-1 px-3 
+            border border-indigo-300 rounded text-sm 
+            transition">*/
+            background-color: oklch(93% 0.034 272.788);/*rgb(224, 231, 255) #E0E7FF */
+            /*border-radius: 4px;
+            padding:0.25rem 0.75rem; in group*/
+            color:oklch(45.7% 0.24 277.023);/*rgb(67, 45, 215) #432DD7*/
+            font-weight: 600;
+            border: 1px solid oklch(78.5% 0.115 274.713);/*rgb(162, 179, 255) #A2B3FF*/
+            cursor:pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.15s ease-out;
+            
+        }
+
+.btn:hover{
+             background-color: oklch(87% 0.065 274.039); /*rgb(199, 210, 254) #c7d2fe*/
+             transform: translateY(-1px);
+             box-shadow: 0 10px 15px -3px rgba(67, 56, 202, 0.2);
+        }
+
+.modern-table{
+        
+        width: 100%;
+        max-width:1000px;
+        border-collapse: collapse; /* Removes double borders */
+        margin:2rem 2rem 2rem 2rem;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden; /* Fixes rounded corners */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+.modern-table th {
+    background-color: oklch(93% 0.034 272.788); /* Your Primary Indigo */
+    color: #333;
+    text-align: left;
+    padding: 12px;
+}
+
+.modern-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgb(224, 231, 255); /* Your Light Indigo */
+    color: #374151;
+}
+
+/* Zebra striping for readability */
+.modern-table tr:nth-child(even) {
+    background-color: rgb(249, 250, 255);
+}
+
