@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banking System</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1ffbd0fc0b.js" crossorigin="anonymous"></script>
     <script type="module" src="index.js" defer></script>
 </head>
 <body>
@@ -13,18 +14,44 @@
     </header>
     
     <form id="accCreate" class="bankform">
+        
         <h2>Create Account</h2>
-        <label for=name>Name</label>
-        <input type= "text" id="name" name="userName">
-        <label for=pass>Password</label>
-        <input type= "password" id="pass" name="userPass">
-        <button type="submit" class="btn">Create Account</button>
+        <div class="form-body">
+            
+            <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="userName">
+            <div id="name-hint" class="hint">Letters only</div>
+            </div>
+
+            <div>
+            <label for="pass">Password</label>
+            <input type="password" id="pass" name="userPass">
+            <span><i id = "pass-toggle" class="fa-regular fa-eye" onclick= seePass()></i></span>
+            <ul id="pass-hints" class="hint-list">
+                <li id="req-length">8+ characters</li>
+                <li id="req-cap">One capital letter</li>
+                <li id="req-num">One number</li>
+                <li id="req-spec">One special character</li>
+            </ul>
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+
+        </div>
+
+        
+        
+        
 
 
     </form>
 
     <div id="account-details" class="bankform"></div>
 
+    <div id="buttons" class="bankform bankform-reverse">
+        <button id="add-funds" type= "button" class="btn">Deposit Funds</button>
+        <button id="withdraws-funds" type ="button" class="btn">Withdraw Funds</button>
+    </div>
     <table id="accountdetails" class="modern-table">
         <thead>
             <tr>

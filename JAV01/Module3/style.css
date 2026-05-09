@@ -5,9 +5,9 @@
         }
 
 body{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            max-width: 1100px;
-        }
+    max-width:1100px;        
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;      
+          }
 
 h1{
             text-align: center;
@@ -15,24 +15,54 @@ h1{
         }
 
 .bankform  {
-        max-width:1000px;       
+            
         background-color: antiquewhite;
-            border-radius: 8px;
-            padding:1rem 1rem;
-            margin:2rem 2rem;
+        border-radius: 8px;
+        padding:1rem 1rem;
+        margin:2rem 2rem;
         }
+
+.form-body{
+    display:flex;
+    gap:8px;
+    align-items: flex-start;
+
+}
+
+.bankform-reverse {
+    display: flex; 
+    flex-direction: row-reverse;
+    gap:8px;
+}
 
 .bankform h2{
 
-            padding: 2rem 0 
+        padding: 2rem 0 
 
         }
 
 .bankform label, input, button{
-            font-size: 20px;
-            border-radius:4px;
-            padding:0.25rem 0.75rem;
+        font-size: 20px;
+        border-radius:4px;
+        padding:0.25rem 0.75rem;
         }
+
+.hint, .hint-list {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.hint-list li.valid, .hint.valid {
+    color: green;
+}
+
+input.error{
+    border:2px solid red;
+    background-color:rgba(255,0,0,0.25);
+}       
 
 .btn{
             /*tailwind class="bg-indigo-100 hover:bg-indigo-200 
