@@ -16,34 +16,57 @@
     <form id="accCreate" class="bankform">
         
         <h2>Create Account</h2>
+        
         <div class="form-body">
             
-            <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="userName">
-            <div id="name-hint" class="hint">Letters only</div>
+            <div class="field-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="userName" required>
+                <!---->
+                
             </div>
 
-            <div>
-            <label for="pass">Password</label>
-            <input type="password" id="pass" name="userPass">
-            <span><i id = "pass-toggle" class="fa-regular fa-eye" onclick= seePass()></i></span>
-            <ul id="pass-hints" class="hint-list">
-                <li id="req-length">8+ characters</li>
-                <li id="req-cap">One capital letter</li>
-                <li id="req-num">One number</li>
-                <li id="req-spec">One special character</li>
-            </ul>
+            <div class="field-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="userEmail" required>
+                
+            </div>
+
+            
+            <div class="field-group">
+                <label for="pass">Password</label>
+                <div>
+                    <input type="password" id="pass" name="userPass" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*]).{8,}"
+                    title="Must contain at least 8 characters, including 1 uppercase, 
+                    1 lowercase, 1 number, and 1 special character." required><span>
+                    <i id = "pass-toggle" class="fa-regular fa-eye"></i></span>
+                </div>
+                   <!-- 
+                -->
             </div>
             <button type="submit" class="btn">Create Account</button>
+            
+
+            <div id="name-hint" class="hint">Letters only</div>
+            
+            <div class = "field-group"></div>
+            <div>
+                <ul id="pass-hints" class="hint-list">
+                        <li id="req-length">8+ characters</li>
+                        <li id="req-cap">One capital letter</li>
+                        <li id="req-num">One number</li>
+                        <li id="req-spec">One special character</li>
+                </ul>
+            </div>
+        
+                
+            
 
         </div>
+    
 
         
-        
-        
-
-
     </form>
 
     <div id="account-details" class="bankform"></div>
@@ -66,5 +89,7 @@
 
         </tbody>
     </table>
+
+    <div id="toggle" class="state1">Some words<button id="change">change</button></div>
 </body>
 </html>

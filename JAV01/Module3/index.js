@@ -13,25 +13,23 @@ myForm.addEventListener('submit', (e) =>{
     e.preventDefault();
 
     //variable for class
-    const nameValue = document.getElementById('name').value;
-    const passValue = document.getElementById('pass').value;
-    
-    //Validate inputs
-    if(nameValue.trim().length === 0 || passValue.trim().length === 0){
-        console.log("No name added")
-        return;
-    }
+    const formData = new FormData(myForm);
 
-
-    
     const accValue = createAccno(); //call function to generate random account no
+    const name = formData.get('userName');
+    const email = formData.get('userEmail');
+    const password = formData.get('userPass');
+
+
+    console.log(formData)
+
+      
     console.log(accValue);
-    console.log(nameValue);
-    console.log(passValue);
+    
      
     
     //create new object from class
-    openAcc = new bankAccount(nameValue,accValue,passValue,0);
+    openAcc = new bankAccount(name,email,accValue,password);
     console.log(openAcc);
     displayAccount();
 });
@@ -47,7 +45,7 @@ function displayAccount(){
     const displayDiv = document.getElementById('account-details');
     if(openAcc){
     displayDiv.innerHTML = `<Strong>Name: </strong>${openAcc.name}<strong>
-            <span style = "margin-left:15px;" >Account No :</strong>${openAcc.account}</span>`;
+            <span style = "margin-left:15px;" >Account No :</strong>${openAcc.account}</span><span style = "margin-left:15px;"><strong>Balance :</strong> ${openAcc.balance}</span>`;
     }
 }
 
@@ -64,4 +62,11 @@ toggleIcon.addEventListener('mouseenter', () => {
 toggleIcon.addEventListener('mouseleave', () => {
     passInput.type = 'password';
     toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+});
+
+const changeBtn = document.getElementById('change');
+
+changeBtn.addEventListener('click', ()=>{
+    const changeDiv = document.getElementById('toggle');
+    changeDiv.classList.toggle('state2');
 });

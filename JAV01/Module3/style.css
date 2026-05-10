@@ -5,7 +5,7 @@
         }
 
 body{
-    max-width:1100px;        
+    max-width:1200px;        
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;      
           }
 
@@ -14,19 +14,34 @@ h1{
             
         }
 
-.bankform  {
-            
-        background-color: antiquewhite;
-        border-radius: 8px;
-        padding:1rem 1rem;
-        margin:2rem 2rem;
-        }
+.bankform {
+    width:100%;    
+    background-color: antiquewhite;
+    border-radius: 8px;
+    padding:1rem 1rem;
+    margin:2rem 2rem;
+    z-index: 1000;
+}
 
 .form-body{
-    display:flex;
-    gap:8px;
-    align-items: flex-start;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap:15px;
+    align-items: end;
 
+}
+
+.field-group{
+    display:flex;
+    flex-direction: column;
+}
+
+.hint {
+    margin-bottom: auto;
+}
+
+.hint-list{
+    list-style: none;
 }
 
 .bankform-reverse {
@@ -37,32 +52,18 @@ h1{
 
 .bankform h2{
 
-        padding: 2rem 0 
+        padding:0; 
 
         }
 
-.bankform label, input, button{
+.bankform1 label, input, button{
         font-size: 20px;
         border-radius:4px;
         padding:0.25rem 0.75rem;
+        
         }
 
-.hint, .hint-list {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 1rem;
-    list-style: none;
-    padding: 0;
-}
-
-.hint-list li.valid, .hint.valid {
-    color: green;
-}
-
-input.error{
-    border:2px solid red;
-    background-color:rgba(255,0,0,0.25);
-}       
+   
 
 .btn{
             /*tailwind class="bg-indigo-100 hover:bg-indigo-200 
@@ -91,7 +92,7 @@ input.error{
 .modern-table{
         
         width: 100%;
-        max-width:1000px;
+        
         border-collapse: collapse; /* Removes double borders */
         margin:2rem 2rem 2rem 2rem;
         background-color: white;
@@ -116,5 +117,14 @@ input.error{
 /* Zebra striping for readability */
 .modern-table tr:nth-child(even) {
     background-color: rgb(249, 250, 255);
+}
+
+.state1{
+    color:white;
+    background-color: red;
+}
+
+.state2{
+    background-color: blue;
 }
 
