@@ -5,22 +5,38 @@
         }
 
 body{
+    display:flex;
+    flex-direction:column;
+    min-height: 100vh;
     max-width:1200px;        
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;      
-          }
+    color:#333;     
+}
+
+main{
+    flex:1;
+}
 
 h1{
-            text-align: center;
+    margin:1rem ;       
+    text-align: center;
             
         }
 
 .bankform {
     width:100%;    
-    background-color: antiquewhite;
+    border:1px solid #60a5fa;
     border-radius: 8px;
     padding:1rem 1rem;
     margin:2rem 2rem;
     z-index: 1000;
+}
+
+.form-heading{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+
 }
 
 .form-body{
@@ -38,16 +54,24 @@ h1{
 
 .hint {
     margin-bottom: auto;
+    display:none;
+}
+
+.show-hint{
+    display:block;
+    color:#4f46e5;
 }
 
 .hint-list{
     list-style: none;
+    color:#4f46e5;
 }
 
 .bankform-reverse {
-    display: flex; 
+    display: none; 
     flex-direction: row-reverse;
     gap:8px;
+    
 }
 
 .bankform h2{
@@ -57,15 +81,34 @@ h1{
         }
 
 .bankform1 label, input, button{
-        font-size: 20px;
+        font-size: 16px;
         border-radius:4px;
         padding:0.25rem 0.75rem;
+        border:1px solid #60a5fa;
+        
         
         }
 
    
-
 .btn{
+    border:1px solid #60a5fa;
+    color:#60a5fa;
+    cursor:pointer;
+    background-color: white;
+    border-radius:9999px;
+
+
+}
+
+.btn-alt{
+    border:1px solid #4f46e5;
+    color:#4f46e5;
+    cursor:pointer;
+    background-color: white;
+    border-radius:9999px;
+    
+}
+.indogobtn{
             /*tailwind class="bg-indigo-100 hover:bg-indigo-200 
             text-indigo-700 font-semibold py-1 px-3 
             border border-indigo-300 rounded text-sm 
@@ -126,5 +169,13 @@ h1{
 
 .state2{
     background-color: blue;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100; /* Keeps it above other content */
 }
 

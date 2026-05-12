@@ -1,5 +1,5 @@
 
-export class bankAccount {
+export class BankAccount {
     constructor(name, email, account, pass, initialBalance) {
         this.name = name;
         this.email = email;
@@ -9,20 +9,21 @@ export class bankAccount {
         this.history = [];
     }
 
-    // PASTE THE METHOD HERE
-    addTransaction(type, amount) {
+    //transaction script
+    addTransaction(amount,type) {
 
         const numericAmount = Number(amount)
-        if (type.toLowercase()==="deposit"){
-                this.balance += amount;
+        if (type.toLowerCase()==="deposit"){
+                this.balance += numericAmount;
         }else{
-             this.balance -= amount;
+             this.balance -= numericAmount;
         }
         
-    
-        // Update the actual balance
+        if (this.balance < 0){
+            return {success:false, message: "Insufficient funds for this withdrawal."}
+        }
         
-
+        // Update the actual balance
         const entry = {
             date: new Date().toLocaleString(), // Includes time
             type: type,
@@ -30,6 +31,7 @@ export class bankAccount {
             currentBalance: this.balance
     };
 
-    this.history.push(entry);
+        this.history.push(entry);
+        return{success: true, entry: entry};
     }
 }

@@ -1,12 +1,21 @@
-import {bankAccount} from './bankAccount.js';
+import {BankAccount} from './bankAccount.js';
 
 //Create an account variable
 
 let openAcc = null;
-
+const displayDiv = document.getElementById('account-details');
+const transDisplay = document.getElementById('transaction-actions');
+const myHint = document.getElementById('hint-btn');
+const hints = document.querySelectorAll('.hint');
 
 //Create an account from form
 const myForm = document.getElementById('accCreate');
+
+myHint.addEventListener('click',()=>{
+    hints.forEach(div =>{
+        div.classList.toggle('show-hint')
+    })
+});
 
 myForm.addEventListener('submit', (e) =>{
     //stops form from sending to server
@@ -29,7 +38,7 @@ myForm.addEventListener('submit', (e) =>{
      
     
     //create new object from class
-    openAcc = new bankAccount(name,email,accValue,password);
+    openAcc = new BankAccount(name,email,accValue,password,0);
     console.log(openAcc);
     displayAccount();
 });
@@ -42,13 +51,41 @@ function createAccno(){
 //Displays account details and creates table entries
 function displayAccount(){
     console.log(openAcc)
-    const displayDiv = document.getElementById('account-details');
+    
     if(openAcc){
-    displayDiv.innerHTML = `<Strong>Name: </strong>${openAcc.name}<strong>
-            <span style = "margin-left:15px;" >Account No :</strong>${openAcc.account}</span><span style = "margin-left:15px;"><strong>Balance :</strong> ${openAcc.balance}</span>`;
+        document.getElementById('transaction-actions').style.display = 'flex';
+        
+        displayDiv.innerHTML = `<Strong>Name: </strong>${openAcc.name}<strong>
+            <span style = "margin-left:15px;" >Account No :</strong>${openAcc.account}
+            </span><span style = "margin-left:15px;">
+            <strong>Balance :</strong> ${openAcc.balance}</span>`;
     }
 }
 
+//Submit a transaction
+
+const transAction = document.getElementById('transaction-form')
+
+transAction.addEventListener('submit',(e)=>{
+    //prevent form going to server
+    e.preventDefault();
+
+    const amount = document.getElementById('transaction').value;
+    const action = e.submitter.value;
+
+    console.log(amount);
+    console.log(action);
+
+    const result = openAcc.addTransaction(amount, action);
+
+    console.log(result.message);
+    transDisplay.insertAdjacentHTML('afterend', `<div style = "display:flex; flex-direction:row-reverse;">${result.message}</div>`);
+
+    
+
+});
+ 
+//Mouse events on password eye
 const passInput = document.getElementById('pass');
 const toggleIcon = document.getElementById('pass-toggle');
 

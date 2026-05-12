@@ -10,86 +10,102 @@
 </head>
 <body>
     <header>
-        <h1>Bank Account Example</h1>
+        <h1><span style="color:#60a5fa">B</span>ank 
+            <span style="color:#60a5fa">A</span>ccount 
+            <span style="color:#60a5fa">E</span>xample</h1>
     </header>
+    <main>
     
-    <form id="accCreate" class="bankform">
-        
-        <h2>Create Account</h2>
-        
-        <div class="form-body">
+        <form id="accCreate" class="bankform">
             
-            <div class="field-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="userName" required>
-                <!---->
-                
+            <div class="form-heading">
+            <h2><span style="color:#60a5fa">C</span>reate 
+                <span style="color:#60a5fa">A</span>ccount</h2>
+                <button id="hint-btn" class="btn-alt">Hint</button>
             </div>
-
-            <div class="field-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="userEmail" required>
+            <div class="form-body">
                 
-            </div>
-
-            
-            <div class="field-group">
-                <label for="pass">Password</label>
-                <div>
-                    <input type="password" id="pass" name="userPass" 
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*]).{8,}"
-                    title="Must contain at least 8 characters, including 1 uppercase, 
-                    1 lowercase, 1 number, and 1 special character." required><span>
-                    <i id = "pass-toggle" class="fa-regular fa-eye"></i></span>
+                <div class="field-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="userName" required>
+                    <!---->
+                    
                 </div>
-                   <!-- 
-                -->
-            </div>
-            <button type="submit" class="btn">Create Account</button>
-            
 
-            <div id="name-hint" class="hint">Letters only</div>
-            
-            <div class = "field-group"></div>
-            <div>
-                <ul id="pass-hints" class="hint-list">
-                        <li id="req-length">8+ characters</li>
-                        <li id="req-cap">One capital letter</li>
-                        <li id="req-num">One number</li>
-                        <li id="req-spec">One special character</li>
-                </ul>
-            </div>
-        
+                <div class="field-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="userEmail" required>
+                    
+                </div>
+
                 
-            
+                <div class="field-group">
+                    <label for="pass">Password</label>
+                    <div>
+                        <input type="password" id="pass" name="userPass" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*]).{8,}"
+                        title="Must contain at least 8 characters, including 1 uppercase, 
+                        1 lowercase, 1 number, and 1 special character." required><span>
+                        <i id = "pass-toggle" class="fa-regular fa-eye"></i></span>
+                    </div>
+                    <!-- 
+                    -->
+                </div>
+                <button type="submit" class="btn">Create Account</button>
+                
 
+                <div id="name-hint" class="hint">Letters only</div>
+                
+                <div class = "hint"></div>
+                <div id="pass-hints" class="hint">
+                    <ul  class="hint hint-list">
+                            <li id="req-length">8+ characters</li>
+                            <li id="req-cap">One capital letter</li>
+                            <li id="req-num">One number</li>
+                            <li id="req-spec">One special character</li>
+                    </ul>
+                </div>
+            
+                    
+                
+
+            </div>
+        
+
+            
+        </form>
+
+        <div id="account-details" class="bankform"></div>
+
+        <form id="transaction-form">
+        <div id="transaction-actions" class="bankform bankform-reverse">
+            
+            <button type= "submit" name="transaction-type" value="deposit" class="btn">Deposit Funds</button>
+            <button type ="submit" name="transaction-type" value = "withdraw" class="btn">Withdraw Funds</button>
+            <input type="number" id="transaction" name ="transaction" required>
         </div>
-    
+        </form>
+        <table id="accountdetails" class="modern-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                </tr>
+
+            </thead>
+            <tbody id="table-body">
+                
+
+            </tbody>
+        </table>
 
         
-    </form>
-
-    <div id="account-details" class="bankform"></div>
-
-    <div id="buttons" class="bankform bankform-reverse">
-        <button id="add-funds" type= "button" class="btn">Deposit Funds</button>
-        <button id="withdraws-funds" type ="button" class="btn">Withdraw Funds</button>
-    </div>
-    <table id="accountdetails" class="modern-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Account Number</th>
-                <th>Balance</th>
-            </tr>
-
-        </thead>
-        <tbody id="table-body">
-            
-
-        </tbody>
-    </table>
-
-    <div id="toggle" class="state1">Some words<button id="change">change</button></div>
+    </main>
+    <footer>
+        <div id="toggle" class="state1">Some 
+            <button id="change">change</button>
+        </div>
+    </footer>
 </body>
 </html>
