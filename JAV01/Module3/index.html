@@ -16,17 +16,17 @@
     </header>
     <main>
     
-        <form id="accCreate" class="bankform">
+        <form id="account-create" class="bankform">
             
             <div class="form-heading">
             <h2><span style="color:#60a5fa">C</span>reate 
                 <span style="color:#60a5fa">A</span>ccount</h2>
-                <button id="hint-btn" class="btn-alt">Hint</button>
+                <button id="hint-btn" type="button" class="btn-alt">Hint</button>
             </div>
             <div class="form-body">
                 
                 <div class="field-group">
-                    <label for="name">Name *</label>
+                    <label for="name"><span style="color:#60a5fa">N</span>ame *</label>
                     <input type="text" id="name" name="userName" required>
                     <!---->
                     
@@ -66,31 +66,49 @@
                     </ul>
                 </div>
             
-                    
-                
-
             </div>
         
-
+        <script>
             
+            document.getElementById('name').value = "Jon"
+            document.getElementById('email').value = "jon@test.com"
+            document.getElementById('pass').value = "passwordW2!"
+            
+
+        </script>
+                   
         </form>
 
-        <div id="account-details" class="bankform"></div>
+        <div id="logout" class="logout"><button id=" logout-btn" type="button" class = "btn">Log Out</button></div>
 
-        <form id="transaction-form">
-        <div id="transaction-actions" class="bankform bankform-reverse">
+        <div id="account-details" class="bankform bankform-hide"></div>
+
+        <form id="transaction-form" class="bankform-hide">
+        
+            <div id="transaction-actions" class="bankform bankform-reverse bankform-hide">
             
-            <button type= "submit" name="transaction-type" value="deposit" class="btn">Deposit Funds</button>
-            <button type ="submit" name="transaction-type" value = "withdraw" class="btn">Withdraw Funds</button>
-            <input type="number" id="transaction" name ="transaction" required>
-        </div>
+                <button type= "submit" name="transaction-type" value="deposit" class="btn">Deposit Funds</button>
+                <button type ="submit" name="transaction-type" value = "withdraw" class="btn">Withdraw Funds</button>
+                <div class= "transaction-wrapper">
+                    <input type="number" id="transaction" name ="transaction" required>
+                    <div id="error-message" class="error-message err-hide"></div>
+                    <div id = "pass-check">
+                        <input id ="pass-check-input" type="password" name="pass-check-input" 
+                        placeholder ="Password" class="pass-check">
+                    </div>
+                </div>
+            
+            </div>
+            
+        
         </form>
-        <table id="accountdetails" class="modern-table">
+        <table id="account-table" class="modern-table bankform-hide">
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Type</th>
                     <th>Amount</th>
+                    <th>Balance</th>
                 </tr>
 
             </thead>
@@ -103,6 +121,7 @@
         
     </main>
     <footer>
+        <div id="footer-icons" class="footer-icons"><img src="icons/facebook.png" height= 15 width= 15></div>
         <div id="toggle" class="state1">Some 
             <button id="change">change</button>
         </div>

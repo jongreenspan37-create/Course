@@ -7,6 +7,8 @@
 body{
     display:flex;
     flex-direction:column;
+    justify-content: center;
+    margin:auto;
     min-height: 100vh;
     max-width:1200px;        
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;      
@@ -31,6 +33,33 @@ h1{
     margin:2rem 2rem;
     z-index: 1000;
 }
+
+.bankform-hide{
+    display:none;
+}
+
+.bankform-reverse {
+    display: flex; 
+    flex-direction: row-reverse;
+    gap:8px;
+    
+}
+
+.bankform h2{
+
+        padding:0; 
+
+        }
+
+.label, input, button{
+        font-size: 16px;
+        border-radius:4px;
+        padding:0.25rem 0.75rem;
+        border:1px solid #60a5fa;
+        
+        
+        }
+
 
 .form-heading{
     display:flex;
@@ -67,27 +96,14 @@ h1{
     color:#4f46e5;
 }
 
-.bankform-reverse {
-    display: none; 
-    flex-direction: row-reverse;
-    gap:8px;
-    
+.logout{
+    display:none;
+    flex-direction:row-reverse;
+    width: 100%;
 }
 
-.bankform h2{
 
-        padding:0; 
 
-        }
-
-.bankform1 label, input, button{
-        font-size: 16px;
-        border-radius:4px;
-        padding:0.25rem 0.75rem;
-        border:1px solid #60a5fa;
-        
-        
-        }
 
    
 .btn{
@@ -108,6 +124,95 @@ h1{
     border-radius:9999px;
     
 }
+
+
+
+.transaction-wrapper{
+    position:relative;
+
+}
+
+.error-message{
+    position:absolute;
+    background:white;
+    bottom:2rem;
+    border: 2px solid red;
+    color: red;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.error-message::after {
+            content: '';
+            position: absolute;
+            bottom:-8px; 
+            left: 20px;              /* Tail positions relative to the bubble box itself */
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;
+            transform: rotate(45deg);
+        }
+
+.err-hide{
+    display:none;
+}
+
+
+.error-container {
+    position: relative; /* Allows precise positioning */
+    display: flex;
+    justify-content: flex-end; /* Keeps it aligned over the input area */
+    margin-bottom: -50px; /* Pulls the input closer to the bubble */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.speech-bubble {
+    position: absolute;
+    background: #ffffff;
+    
+    border: 2px solid #547075;
+    color: #0f2f4d;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+    
+}
+
+/* The Tail (Pointing Down) */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -7px; /* Positioned at the bottom */
+    right: 25px;  /* Adjust this to line up with your input */
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-right: 2px solid #547075;
+    border-bottom: 2px solid #547075;
+    transform: rotate(45deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pass-check{
+    position:absolute;
+    top:0;
+    right:0;
+    display:none;
+    background-color: rgba(255,0,0,.25);
+    z-index:1000;
+}
+
 .indogobtn{
             /*tailwind class="bg-indigo-100 hover:bg-indigo-200 
             text-indigo-700 font-semibold py-1 px-3 

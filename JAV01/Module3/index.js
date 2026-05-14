@@ -3,45 +3,26 @@ import {BankAccount} from './bankAccount.js';
 //Create an account variable
 
 let openAcc = null;
-const displayDiv = document.getElementById('account-details');
-const transDisplay = document.getElementById('transaction-actions');
+const accountDetails = document.getElementById('account-details');
+const transactionForm = document.getElementById('transaction-form')
+const transAction = document.getElementById('transaction-actions')
 const myHint = document.getElementById('hint-btn');
 const hints = document.querySelectorAll('.hint');
-
-//Create an account from form
-const myForm = document.getElementById('accCreate');
-
-myHint.addEventListener('click',()=>{
-    hints.forEach(div =>{
-        div.classList.toggle('show-hint')
-    })
-});
-
-myForm.addEventListener('submit', (e) =>{
-    //stops form from sending to server
-    e.preventDefault();
-
-    //variable for class
-    const formData = new FormData(myForm);
-
-    const accValue = createAccno(); //call function to generate random account no
-    const name = formData.get('userName');
-    const email = formData.get('userEmail');
-    const password = formData.get('userPass');
+const accCreate = document.getElementById('account-create');
+const tableBody = document.getElementById('table-body');
+const errMsg = document.getElementById('error-message');
+const transAmount = document.getElementById('transaction');
+const logOut = document.getElementById('logout');
+const changeBtn = document.getElementById('change');
+const accountTable = document.getElementById('account-table');
+const passCheck =document.getElementById('pass-check');
+const passCheckInput = document.getElementById('pass-check-input');
 
 
-    console.log(formData)
+//Mouse events on password eye
+const passInput = document.getElementById('pass');
+const toggleIcon = document.getElementById('pass-toggle');
 
-      
-    console.log(accValue);
-    
-     
-    
-    //create new object from class
-    openAcc = new BankAccount(name,email,accValue,password,0);
-    console.log(openAcc);
-    displayAccount();
-});
 
 //generates a random account no
 function createAccno(){
@@ -49,45 +30,132 @@ function createAccno(){
 }
 
 //Displays account details and creates table entries
-function displayAccount(){
-    console.log(openAcc)
+function displayAccount(openAccount){
+    console.log("this is running" + openAcc)
     
     if(openAcc){
-        document.getElementById('transaction-actions').style.display = 'flex';
+        transactionForm.classList.remove('bankform-hide');
         
-        displayDiv.innerHTML = `<Strong>Name: </strong>${openAcc.name}<strong>
+        accountDetails.innerHTML = `<Strong>Name: </strong>${openAcc.name}<strong>
             <span style = "margin-left:15px;" >Account No :</strong>${openAcc.account}
             </span><span style = "margin-left:15px;">
             <strong>Balance :</strong> ${openAcc.balance}</span>`;
+            console.log(openAcc.balance);
     }
 }
 
-//Submit a transaction
+//takes different messages for amount input
+function errMessage(message){
+        errMsg.classList.remove('err-hide');
+        errMsg.innerText = message;
+        setTimeout(()=>{
+            errMsg.classList.add('err-hide')},2000);
+        return;
+    }
 
-const transAction = document.getElementById('transaction-form')
+//Show Hints
+myHint.addEventListener('click',()=>{
+    hints.forEach(div =>{
+        div.classList.toggle('show-hint')
+    })
+});
 
-transAction.addEventListener('submit',(e)=>{
-    //prevent form going to server
+//Creates an account
+accCreate.addEventListener('submit', (e) =>{
+    //stops form from sending to server
     e.preventDefault();
 
-    const amount = document.getElementById('transaction').value;
-    const action = e.submitter.value;
+    //variable for class
+    const formData = new FormData(accCreate);
 
-    console.log(amount);
-    console.log(action);
+    const accValue = createAccno(); //call function to generate random account no
+    const name = formData.get('userName');
+    const email = formData.get('userEmail');
+    const password = formData.get('userPass');
 
-    const result = openAcc.addTransaction(amount, action);
-
-    console.log(result.message);
-    transDisplay.insertAdjacentHTML('afterend', `<div style = "display:flex; flex-direction:row-reverse;">${result.message}</div>`);
-
+    console.log(formData)
+    console.log(accValue);
     
-
+    //create new object from class
+    openAcc = new BankAccount(name,email,accValue,password,0);
+    console.log(openAcc);
+    displayAccount(openAcc);
+    accCreate.style.display = 'none';
+    logOut.style.display = 'flex';
+    transactionForm.classList.remove('bankform-hide');
+    accountDetails.classList.remove('bankform-hide');
+    accountTable.classList.remove('bankform-hide');
 });
- 
-//Mouse events on password eye
-const passInput = document.getElementById('pass');
-const toggleIcon = document.getElementById('pass-toggle');
+
+//Catch Enter Key
+transactionForm.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+        e.preventDefault();
+        errMessage("Please use the Deposit or Withdraw buttons");
+    }
+});
+
+//Submit a transaction
+transactionForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    
+    const action = e.submitter.value;
+    console.log(action);
+    
+    
+    
+    const result = openAcc.addTransaction(transAmount.value, action);
+
+    console.log(result.success);
+    
+    if(result.success === false){
+        errMessage(result.message)
+        return;
+    }
+
+    if(action==='withdraw' && passCheckInput.value === ''){
+        console.log("new check " + action);
+        passCheck.classList.remove('bankform-hide');
+        transAmount.style.display = 'none';
+        passCheckInput.style.display = 'inline-block';
+        errMessage("Verify password");
+
+        return;
+    }
+
+    if(action==='withdraw' && passCheckInput.value !== ''){
+        if (passInput.value !== passCheckInput.value){
+            errMessage("Password does not match")
+            return;
+        }
+    }
+
+    console.log(result.entry);
+
+    const newRow = tableBody.insertRow(0);
+
+    const dateCell = newRow.insertCell(0);
+    const typeCell = newRow.insertCell(1);
+    const amountCell = newRow.insertCell(2);
+    const balanceCell = newRow.insertCell(3);
+
+    const localDate = new Date(result.entry.date).toLocaleString();
+
+    dateCell.textContent = localDate;
+    typeCell.textContent = result.entry.type.toUpperCase();
+    amountCell.textContent = `£${result.entry.amount.toFixed(2)}`;
+    balanceCell.textContent = `£${openAcc.balance.toFixed(2)}`;
+
+    typeCell.classList.add(`action-${result.entry.type}`);
+    amountCell.classList.add(result.entry.type === 'deposit' ? 'text-green' : 'text-red');
+    
+    displayAccount(openAcc);
+    console.log(transAmount);
+    transAmount.value = null;
+   
+});
+
 
 // Show password on hover
 toggleIcon.addEventListener('mouseenter', () => {
@@ -101,9 +169,24 @@ toggleIcon.addEventListener('mouseleave', () => {
     toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
 });
 
-const changeBtn = document.getElementById('change');
+logOut.addEventListener('click',()=>{
+
+        tableBody.innerHTML='';
+        openAcc = null;
+
+        
+        accCreate.style.display = '';
+        logOut.style.display = 'none';
+        accountTable.classList.add('bankform-hide');
+        accountDetails.classList.add('bankform-hide');
+        transactionForm.classList.add('bankform-hide');
+
+        accCreate.reset();
+
+})
 
 changeBtn.addEventListener('click', ()=>{
     const changeDiv = document.getElementById('toggle');
     changeDiv.classList.toggle('state2');
 });
+

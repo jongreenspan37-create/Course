@@ -10,23 +10,27 @@ export class BankAccount {
     }
 
     //transaction script
-    addTransaction(amount,type) {
+    addTransaction(amount,action ) {
 
         const numericAmount = Number(amount)
-        if (type.toLowerCase()==="deposit"){
-                this.balance += numericAmount;
-        }else{
-             this.balance -= numericAmount;
-        }
         
-        if (this.balance < 0){
+
+        if (action.toLowerCase() === "withdraw" && numericAmount > this.balance){
             return {success:false, message: "Insufficient funds for this withdrawal."}
         }
+        
+        if (action.toLowerCase()==="deposit"){
+                this.balance += numericAmount;
+        }else{
+                this.balance -= numericAmount;
+        }
+        
+        
         
         // Update the actual balance
         const entry = {
             date: new Date().toLocaleString(), // Includes time
-            type: type,
+            type: action,
             amount: numericAmount,
             currentBalance: this.balance
     };
