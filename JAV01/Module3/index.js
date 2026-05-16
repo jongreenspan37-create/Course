@@ -50,7 +50,7 @@ function errMessage(message){
         errMsg.innerText = message;
         setTimeout(()=>{
             errMsg.classList.add('err-hide')},2000);
-        return;
+        
     }
 
 //Show Hints

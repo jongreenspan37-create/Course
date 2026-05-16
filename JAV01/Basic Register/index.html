@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation and Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Primary Portal">
+        <ul id="nav-menu" class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Account Creation and Login</h1>
+        <img src="JRGLogo.png" height="100" width="90" alt="My Logo">
+    
+    </header>
+
+    <main>
+        <!--Register -->
+        <section id="register-account" class="register-wrapper show">
+            <form id="register-form" class="form">
+                
+                <div class="form-group">
+                    <label for="register-title">Title</label>
+                    <select id="register-title" type="text" name="register-title" required>
+                        <option value="" disabled selected hidden>Choose...</option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-firstname">First Name</label>
+                    <input id="register-firstname" type="text" name="register-firstname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-surname">Surname</label>
+                    <input id="register-surname" type="text" name="register-surname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <div class="email-error-wrapper">
+                        <input id="register-email" type="email" name="register-email" required>
+                        <div id="register-email-error" class="error-bubble">Error</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input id="register-password" type="password" 
+                        pattern="(?=.*\d)(?=.*[A-Z]).{8,}" 
+                        name="register-password" 
+                        aria-describedby="password-hint"
+                        required>
+                    <small id="password-hint" class="form-hint">
+                                Must be at least 8 characters long, contain 1 number,
+                                and 1 uppercase letter
+                    </small>
+                </div>
+
+                <button type="submit" class="form-submit">Register</button>
+
+            </form>
+
+            <div id="registered-users-list" class="registered-users"></div>
+        </section>
+
+        
+
+        <!--LOGIN-->
+        <section id="login-account" class="hide">
+            <form id="login-form" class="form">
+
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" type="email" name="login-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" type="password" name="login-password" required>
+                </div>
+
+                <button type="submit" class="form-submit">Log In</button>
+            
+            </form>
+
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-copy">&copy; JRGContracts 2026</div>
+        
+        <div class="footer-socials">
+            <ul class="social-icons">
+                <li><a href="#"><img src="facebook.png" height="20" width="20" alt="Facebook Page"></a></li>
+                <li><a href="#"><img src="instagram.png" height="20" width="20" alt="Instagram Page"></a></li>
+                <li><a href="#"><img src="x.png" height="20" width="20" alt="X Page"></a></li>
+            </ul>
+        
+        </div>
+
+    </footer>
+    <script type="module" src="script.js"></script>   
+</body>
+</html>

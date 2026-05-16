@@ -5,8 +5,13 @@ export class BankAccount {
         this.email = email;
         this.account = account;
         this.pass = pass;
-        this.balance = initialBalance;
+        this.balanceInPence = Math.round(Number(initialBalance) * 100);
         this.history = [];
+    }
+
+    //Clean pounds and pence figure
+    get balance(){
+        return this.balanceInPence /100;
     }
 
     //transaction script

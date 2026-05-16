@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* basic format*/
+body{
+    
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+main{
+    flex:1;
+}
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+    color: inherit;
+}
+
+/*NAVIGATION*/
+
+.main-nav{
+    padding: 1rem 2rem;
+    background-color: #1e3a8a;
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1001;
+}
+
+.nav-menu{
+    list-style: none;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:2rem;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 0 2rem;
+}
+
+.nav-link{
+    text-decoration: none;
+    color:aliceblue;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.25rem 0;
+    display:inline-block;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover{
+    color: #93c5fd; 
+    transform: scale(1.05);
+    outline: none;
+}
+
+/*HEADER*/
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    max-width: 1200px;
+    margin:0 auto;
+    padding:2rem 2rem;
+    position:sticky;
+    background-color: white;
+    z-index:1000;
+    top:3.5rem;
+    
+
+}
+header h1{
+    flex:1;
+    padding:0 2rem;
+}
+
+header img{
+    display:block;
+    object-fit: contain;
+}
+
+/*SECTIONS*/
+
+.register-wrapper{
+    display:flex;
+
+}
+
+.registered-users{
+    margin:2rem auto;
+
+}
+
+/*FORMS*/
+.show{
+    display:flex;
+    justify-content: center;
+}
+
+.hide{
+    display:none;
+   
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    gap:1.5rem;
+    border:1px solid #60a5fa;
+    border-radius:8px;
+    width:600px;
+    max-width:600px;
+    padding: 2rem;
+    margin:2rem auto;
+    background-color: #ffffff;
+
+}
+
+.form-group{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items: center;
+    gap:1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+
+.form-hint {
+    grid-column: 1 / -1; /* Spans from column line 1 across to the absolute end */
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: -0.5rem; /* Tucks it tightly up under the password input track */
+}
+
+/*FORM BUTTONS*/
+.form-submit{
+    align-self: flex-end;
+    color:#60a5fa;
+    border: 1px solid #60a5fa;
+    border-radius: 9999px;
+    background-color: white;
+    font-weight: 500;
+    padding:0.5rem 1.5rem;
+    cursor:pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.form-submit:hover,
+.form-submit:focus {
+    background-color: #60a5fa;
+    color: white;
+    outline: none;
+}
+
+.email-error-wrapper{
+    position:relative;
+}
+
+.error-bubble{
+    position:absolute;
+    top:-2.7rem;
+    left:1rem;
+    border:1px solid red;
+    padding:0.25rem 1rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    background-color: white;
+    color:red;
+    display:none;
+    z-index:10;
+}
+
+.error-bubble::after{
+    content: '';
+    position: absolute;
+    bottom:-0.4rem; 
+    left: 20px;              /* Tail positions relative to the bubble box itself */
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+    transform: rotate(45deg);
+
+}
+
+/*FOOTER*/
+.site-footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background-color: white;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap:0.25rem;
+    z-index:1000;
+}
+
+.footer-copy{
+    text-align: center;
+    padding:1rem 0;
+}
+
+.footer-socials{
+    display:flex;
+    justify-content: center;
+    
+}
+
+.social-icons{
+    display:flex;
+    list-style: none;
+    gap:2rem;
+    padding:0 0 0.25rem 0;
+}

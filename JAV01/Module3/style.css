@@ -284,3 +284,7 @@ footer {
   z-index: 100; /* Keeps it above other content */
 }
 
+.footer-icons{
+    text-align:center ;
+}
+
