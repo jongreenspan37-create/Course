@@ -1,0 +1,109 @@
+/*BASIC SETUP*/
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body{
+    
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    flex:1;
+}
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+    color: inherit;
+}
+
+
+/*NAVIGATION*/
+header{
+    display:flex;
+    flex-direction: column;
+    background-color: #2563eb;
+    
+
+}
+
+.header-logo{
+
+    margin:0.5rem;
+    border-radius: rounded;
+    mix-blend-mode: multiply;
+    
+    
+}
+
+.top-bar{
+    display:flex;
+    align-items: center;
+   
+   
+    
+}
+
+.main-nav{
+    display:flex;
+    justify-content: center;
+    flex:1;
+    
+    
+    
+}
+.nav-menu{
+    display:flex;
+    justify-content: center;
+    gap:2rem;
+    list-style: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    color:white;
+    font-weight: 500;
+    font-size: 1rem;
+    padding:0.25rem 1rem;
+    
+}
+
+.icon-menu{
+    
+    display:flex;
+    list-style: none;
+    padding:0 5rem;
+}
+
+.icon-link{
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px 10px 0px 10px;
+
+}
+
+
+/**/
+/**/
+/**/
+/**/
+/**/
