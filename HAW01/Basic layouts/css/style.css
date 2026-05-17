@@ -179,17 +179,14 @@ h1{
         color:#60a5fa;
 
     }
-
-    
-
-    
+ 
 }
 
 
 /*MAIN AREA AND SECTIONS*/
 
 main{
-    background-image:url(lightbulb.jpg) ;
+    background-image:url(../images/lightbulb.jpg) ;
     background-size: cover;
 }
 
@@ -262,7 +259,11 @@ main{
 }
 
 
-/*FOOTER*/
+/*
+-------------------------------
+            FOOTER
+-------------------------------
+*/
 
 .site-footer{
     background-color: #2563eb;

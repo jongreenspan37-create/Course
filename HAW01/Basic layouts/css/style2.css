@@ -1,0 +1,285 @@
+/*BASIC SETUP*/
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body{
+    
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    flex:1;
+}
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+    color: inherit;
+}
+
+/* 
+--------------
+    HEADER
+--------------
+*/
+header {
+    position:sticky;
+    top:0;
+    background-color: #14b8a6;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin: 0 auto;
+
+}
+
+header h1{
+    
+    text-align: center;
+}
+
+.header-logo{
+
+    margin:0.5rem;
+    border-radius: rounded;
+    mix-blend-mode: multiply;
+}
+
+
+
+/* Main menu and introduction text */
+
+.intro{
+    display:flex;
+}
+
+.main-text {
+    border:1px solid #14b8a6;
+    border-radius: 8px;
+    height:auto;
+    padding:1rem;
+    margin:2rem;
+    color:#333 ;
+    max-width:60vw;
+}
+
+.main-text p{
+    margin-bottom:2rem;
+}
+
+.feature-text{
+    color:white;
+    background-color: #14b8a6;
+}
+
+.menu-items{
+    display:flex;
+    flex-direction: column;
+    margin:2rem;
+    padding:2rem;
+    list-style: none;
+    
+}
+
+.menu-items li{
+    margin: 20px;
+    
+}
+.menu-items li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+    max-width:30vw;
+    background-color: #14b8a6;
+    text-align: center;
+    border-radius: 10px;
+    padding:0.5rem 1rem;
+    color: white;
+    
+}
+
+/* Second area with picture and about text*/
+.about{
+    display:flex;
+}
+
+.about-image-container{
+    margin:2rem;
+    width:50vw;
+}
+
+.about-image{
+    max-width:50vw;
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    border-radius: 8px;
+
+}
+
+.about-words{
+
+    border:1px solid #14b8a6;
+    padding:50px;
+    max-width:45vw;
+}
+
+
+
+/*Bullet points with words*/
+
+.features{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr 2fr);
+    align-items: center;
+    }
+
+.feature-text{
+    border-radius: 8px;
+    height:auto;
+    padding:1rem;
+    margin:2rem;
+    color:white;
+    background-color: #14b8a6;
+
+   
+}
+
+
+.circle{
+    margin:2rem;
+    max-width:10rem;
+    height:10rem;
+    background:#14b8a6;
+    border-radius: 50%;
+    font-family: fantasy;
+    text-align: center;
+    
+}
+
+
+
+@media (max-width:768px){
+    
+    .intro{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .menu-items{
+        margin:0.25rem;
+        flex-direction: row;
+    }
+
+    .menu-items li a{
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding:0.25rem 0.75rem;
+    }
+
+    .main-text {
+        margin:0.1rem;
+        min-width:90vw;
+
+        
+    }
+    
+    .about{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-img{
+        min-width:90vw;
+       
+    }
+
+    .features{
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .feature-text{
+        font-size: x-small;
+       
+    }
+
+    .circle{
+        width:3rem;
+        height:3rem;
+    }
+    
+
+    
+}
+
+/* 
+--------------
+    FOOTER
+--------------
+*/
+
+.site-footer{
+    width:100%;
+    position:sticky;
+    bottom:0;
+}
+
+.footer-container{
+            
+    position:relative;
+    height:50px;
+    background:#14b8a6;
+    overflow:hidden;
+}
+
+.bubble{
+    
+    position:absolute;
+    bottom:-50px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: rise-and-fade 4s linear forwards;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+
+}
+
+@keyframes rise-and-fade {
+    0%{transform: translateY(0) scale(1); opacity: 0.6;}
+    100%{transform: translateY(-180px) scale(1.2); opacity:0;}
+            
+}
+
+.footer-copy{
+    margin-top: 1rem;;
+    text-align: center;
+}
+
+
+        
+
+/**/
+/**/
+/**/
+/**/
