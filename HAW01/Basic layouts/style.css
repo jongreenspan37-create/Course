@@ -62,25 +62,43 @@ h1{
 .top-bar{
     display:flex;
     align-items: center;
-   
-   
-    
+}
+
+.hamburger-btn {
+  background: transparent; 
+  border: none;            
+  cursor: pointer;         
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:0.25rem;
+  
+  /* Defines the overall boundary of the hamburger icon square */
+  width: 2.5rem;
+  height: 2rem;
+}
+
+.bar {
+    display: block;          /* Forces spans to behave like layout blocks */
+    width: 100%;             /* Spans the full 30px width of the button */
+    height: 3px;             /* Sets the thickness of each line */
+    background-color: white; /* Changed to white so it pops on your blue background */
+    border-radius: 2px;      /* Slightly rounds the edges of the lines */
 }
 
 .main-nav{
-    display:flex;
-    justify-content: center;
     flex:1;
     
-    
-    
 }
+
 .nav-menu{
     display:flex;
     justify-content: center;
     gap:2rem;
     list-style: none;
 }
+
+
 
 .nav-link{
     text-decoration: none;
@@ -101,8 +119,70 @@ h1{
 .icon-link{
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 0px 10px 0px 10px;
+    padding: 0 0.5rem 0 0.5rem;
 
+}
+
+@media(max-width:768px){
+    
+    .top-bar {
+        flex-direction: row-reverse;
+        padding: 0.5rem 1rem;
+    }
+
+    /* 2. Force the social icons wrapper to claim 100% of the screen width */
+    .socialicons {
+        flex: 0 0 50%; 
+        margin-top: 1rem;
+    }
+
+    /* 3. Strip old padding constraints and let flex alignment center the list elements */
+    .icon-menu {
+        padding: 0.5rem 0;
+        background-color: transparent; /* Changed from white to preserve header theme */
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .hamburger-btn{
+        display:flex;
+        z-index: 1000;
+               
+    }
+    
+    .main-nav{
+        display:none;
+    }        
+    
+    .is-open{
+        display:flex;
+    }
+    
+    .nav-menu{
+        position:absolute;
+        top:6rem;
+        left:1rem;
+        border:1px solid #60a5fa;
+        padding:2rem;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.9); 
+        
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+        
+    }
+
+    .nav-link{
+        color:#60a5fa;
+
+    }
+
+    
+
+    
 }
 
 
@@ -124,7 +204,7 @@ main{
     flex-direction: column;
     max-width:600px;
     min-height: 300px;
-    margin: 3rem 0 0 3rem;
+    margin: 3rem 1rem 0 3rem;
     background-color:#60a5fa ;
     padding:3rem;
     border-radius: 8px;

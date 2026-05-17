@@ -10,14 +10,20 @@
 </head>
 <body>
     <header>
+        
+        
         <div class="top-bar">
+                 
             <img src="JRGLogo.png" height="80" width="160" alt="My Logo" class="header-logo">
-            <nav class="main-nav" aria-label="Primary Portal">
+            
+            <nav id="main-nav" class="main-nav" aria-label="Primary Portal">
                 <ul id="nav-menu" class="nav-menu">
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="layout2.html" class="nav-link">Layout Two</a></li>
                 </ul>
             </nav>
+
+            
 
             <div class="socialicons">
             
@@ -28,14 +34,23 @@
                 </ul>
             
             </div>
+
+            <button class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>  
     
         </div>
+        
 
         <div>
             <h1>Basic layout examples</h1>
         </div>
 
     </header>
+
+    
     
     <main>
 
@@ -79,6 +94,16 @@
         </div>
 
     </footer>
+
+    <script>
+        const hamBurger = document.querySelector('.hamburger-btn');
+        const navMenu = document.querySelector('.main-nav');
+
+        hamBurger.addEventListener('click', ()=>{
+            navMenu.classList.toggle('is-open') ='flex'
+
+        });
+    </script>
     
 </body>
 </html>
