@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 3</title>
+    <link rel="stylesheet" href="css/style3.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen text text-neutral-800" font-sans>
+    
+
+    <header class="">
+        <div class="fixed w-full top-0 z-50 bg-slate-300 shadow-md flex items-center mb-2">
+            <div><img src="images/JRGLogo.png" height="40" width="80" class="mx-2 p-2 mix-blend-multiply"></div>
+            <div class="hidden md:flex flex-1 justify-center">
+                <nav class="w-full flex justify-center" aria-label="Primary Portal">
+                    <ul class="py-1 flex flex-col items-center md:flex-row justify-center gap-3 border-2 border-slate-900 rounded-sm">
+                        <li><a href="index.html" class="py-1 px-2 hover:bg-white rounded-sm">Home</a></li>
+                        <li><a href="about.html" class="py-1 px-2 hover:bg-white rounded-sm">About</a></li>
+                        <li><a href="layout2.html" class="py-1 px-2 hover:bg-white rounded-sm">Layout Two</a></li>
+                        <li><a href="layout3.html" class="py-1 px-2 hover:bg-white rounded-sm">Layout Three</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex justify-end items-center h-8 w-[96px] shrink-0">
+                <button id="hanburger-btn" class="mx-4 px-8 flex flex-col gap-1.5 md:hidden" 
+                    aria-label="Toggle menu" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu">
+
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+            </button> 
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+    <!--CAROSEL AREA-->
+        <section class="mt-24">
+        <div class="flex w-full justify-center items-center gap-4">
+            <div>
+                <button id="left-btn" 
+                        type="button" 
+                        class="text-5xl font-bold text-blue-800">
+                        &lt;
+                </button>
+            </div>
+            
+            <div class="w-[512px] h-40 overflow-hidden rounded-lg shadow-md">
+                <div id="carousel-track" class="flex w-full h-full transition-transform duration-300 ease">
+                    <img src="./images/C1.jpg" alt="matchu pichu" class="w-[512px] h-40 object-cover shrink-0">
+                    <img src="./images/C2.jpg" alt="greek village" class="w-[512px] h-40 object-cover shrink-0">
+                    <img src="./images/C3.jpg" alt="mexican beech" class="w-[512px] h-40 object-cover shrink-0">
+                </div>
+            </div>
+            
+            <div>
+                <button id="right-btn" 
+                        type="button" 
+                        class="text-5xl font-bold text-blue-800">
+                        &gt;
+                </button>
+            </div>
+
+        </div>
+        <div class="my-4 flex justify-center gap-4">
+            <div id="slide-1" class="h-4 w-4 rounded-full bg-slate-600"></div>
+            <div id="slide-2" class="h-4 w-4 rounded-full bg-slate-600"></div>
+            <div id="slide-3" class="h-4 w-4 rounded-full bg-slate-600"></div>
+        </div>
+    
+    </section>
+    
+    
+
+        <section class="flex flex-col md:flex-row m-4 p-4 w-full gap-8">
+            <div class="w-full md:w-[800px] h-auto object-cover rounded-xl">
+                <img src="images/lightbulb.jpg" class="p-4 rounded-xl p-4">
+            </div>
+
+            <div class ="flex-1 max-w-[600px] justify-center">
+                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </section>
+
+        <section class="mx-12 pb-4 border-4 border-slate-900 rounded-lg">
+
+            <h2 class="text-center text-2xl font-bold p-2">Sponser text</h2>
+
+            <div class="px-4 flex gap-4 w-full justify-center rounded-lg">
+                <figure class="rounded-xl">
+                    <img src="./images/S1.JPG" alt="sponser 1" height="100" width="100">
+                    <figcaption class="text-center">Sponser 1</figcaption>
+                </figure>
+
+                <figure >
+                    <img src="./images/S2.JPG" alt="sponser 2" height="100" width="100">
+                    <figcaption class="text-center">Sponser 2</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S3.JPG" alt="sponser 3" height="100" width="100">
+                    <figcaption class="text-center">Sponser 3</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S4.JPG" alt="sponser 4" height="100" width="100">
+                    <figcaption class="text-center">Sponser 4</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S5.JPG" alt="sponser 5" height="100" width="100">
+                    <figcaption class="text-center">Sponser 5</figcaption>
+                </figure>
+
+            </div>  
+
+        </section>
+
+    </main>
+
+    <footer class="md:sticky bottom-0 z-50">
+        <div class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-300 w-full ">
+            
+            <div>
+
+                <div><h2 class="text-sm md:text-2xl font-bold mb-1">Contact Us</h2></div>
+                
+                <form id="contact-form" class="flex flex-col gap-2">
+                    
+                    <div class="flex">
+                        <label for="contact-title" class="w-24">Title</label>
+                        <select id="contact-title" 
+                                type="text" 
+                                name="contact-title" 
+                                class="w-24 rounded-lg" 
+                                required>
+                            <option value="" disabled selected hidden>Choose...</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex">
+                        <label for="contact-name" class="w-24">Full Name</label>
+                        <input id="contact-name" 
+                               type="text" 
+                               name="contact-name" 
+                               class="w-64 rounded-lg" required>
+                    </div>
+                    
+                    
+                    <div class="flex">
+                        <label for="contact-email" class="w-24">Email</label>
+                        <div>
+                            <input id="contact-email" 
+                                   type="email" 
+                                   name="contact-email" 
+                                   class="w-64 rounded-lg"
+                                   required>
+                            <div class="hidden">Error</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="message-text">Message</label>
+                        <input id="message-text" type="textarea" 
+                            name="message-text" 
+                            aria-describedby="message-text"
+                            required>
+                    </div>
+
+                    <button type="submit">Submit</button>
+
+                </form>
+            </div>
+        
+            <div>
+                <div><h2 class="text-2xl font-bold mb-1">Site Map</h2></div>
+                <div aria-label="Site Map">
+                    <ul class="footer-menu">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="layout2.html" class="footer-link">Layout Two</a></li>
+                        <li><a href="layout3.html" class="footer-link">Layout Three</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div >
+                <img src="images/JRGLogo.png" 
+                     height="80" 
+                     width="160" 
+                     alt="My Logo" 
+                     class="rounded-lg">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8">
+                        <use href="images/icons.svg#icon-phone"></use>
+                    </svg>
+                    <div>07802 419809</div>
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-8 h-8">
+                        <use href="images/icons.svg#icon-email"></use>
+                    </svg>
+                    <div>jongreenspan37@gmail.com</div>
+
+                </div>
+                
+            </div>
+        
+        
+        </div>
+
+
+    </footer>
+<script src="scripts/layout3.js"></script>
+  
+</body>
+</html>

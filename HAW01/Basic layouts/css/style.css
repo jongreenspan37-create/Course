@@ -78,12 +78,18 @@ h1{
   height: 2rem;
 }
 
+
+
 .bar {
-    display: block;          /* Forces spans to behave like layout blocks */
-    width: 100%;             /* Spans the full 30px width of the button */
-    height: 3px;             /* Sets the thickness of each line */
-    background-color: white; /* Changed to white so it pops on your blue background */
-    border-radius: 2px;      /* Slightly rounds the edges of the lines */
+    display: block;          
+    width: 100%;             
+    height: 3px;            
+    background-color: white; 
+    border-radius: 2px;      
+}
+
+.hamburger-btn:hover .bar{
+    background-color:black; 
 }
 
 .main-nav{
@@ -106,7 +112,13 @@ h1{
     font-weight: 500;
     font-size: 1rem;
     padding:0.25rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
     
+}
+
+.nav-link:hover{
+    background-color:#1d4ed8 ;
+    border-radius: 999px;
 }
 
 .icon-menu{
@@ -231,7 +243,16 @@ main{
     font-weight: 500;
     padding:0.25rem 1rem;
     background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
 }
+
+.intro-button a:hover{
+    background-color: #1d4ed8;
+    color:white;
+}
+
+
 
 .local-menu{
     
@@ -256,6 +277,11 @@ main{
     color:#2563eb;
     font-weight: 500;
     padding:0.25rem 1rem;
+}
+
+.local-menu a:hover{
+    background-color: #1d4ed8;
+    color:white;
 }
 
 
