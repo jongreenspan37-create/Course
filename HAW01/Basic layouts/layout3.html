@@ -12,7 +12,26 @@
 
     <header class="">
         <div class="fixed w-full top-0 z-50 bg-slate-300 shadow-md flex items-center mb-2">
-            <div><img src="images/JRGLogo.png" height="40" width="80" class="mx-2 p-2 mix-blend-multiply"></div>
+            <div>
+                <img src="images/JRGLogo.png" 
+                      height="40" 
+                      width="80" 
+                      class="mx-2 p-2 mix-blend-multiply">
+            </div>
+
+            <div id="hamburger-container" class="flex grow justify-end md:hidden">
+                <button id="hamburger-btn" 
+                        class="mx-4 px-8 flex flex-col gap-1.5" 
+                        aria-label="Toggle menu" 
+                        aria-expanded="false" 
+                        aria-controls="mobile-menu">
+
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                </button> 
+            </div>
+            
             <div class="hidden md:flex flex-1 justify-center">
                 <nav class="w-full flex justify-center" aria-label="Primary Portal">
                     <ul class="py-1 flex flex-col items-center md:flex-row justify-center gap-3 border-2 border-slate-900 rounded-sm">
@@ -23,16 +42,8 @@
                     </ul>
                 </nav>
             </div>
-            <div class="flex justify-end items-center h-8 w-[96px] shrink-0">
-                <button id="hanburger-btn" class="mx-4 px-8 flex flex-col gap-1.5 md:hidden" 
-                    aria-label="Toggle menu" 
-                    aria-expanded="false" 
-                    aria-controls="mobile-menu">
-
-                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
-                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
-                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
-            </button> 
+            <div class="hidden md:flex justify-end items-center h-8 w-[96px] shrink-0">
+              
             </div>
         </div>
     </header>
@@ -40,7 +51,7 @@
     <main class="flex-1">
     <!--CAROSEL AREA-->
         <section class="mt-24">
-        <div class="flex w-full justify-center items-center gap-4">
+        <div class="flex justify-center items-center gap-4">
             <div>
                 <button id="left-btn" 
                         type="button" 
@@ -49,11 +60,11 @@
                 </button>
             </div>
             
-            <div class="w-[512px] h-40 overflow-hidden rounded-lg shadow-md">
-                <div id="carousel-track" class="flex w-full h-full transition-transform duration-300 ease">
-                    <img src="./images/C1.jpg" alt="matchu pichu" class="w-[512px] h-40 object-cover shrink-0">
-                    <img src="./images/C2.jpg" alt="greek village" class="w-[512px] h-40 object-cover shrink-0">
-                    <img src="./images/C3.jpg" alt="mexican beech" class="w-[512px] h-40 object-cover shrink-0">
+            <div class="w-[300px] md:w-[500px] h-40 overflow-hidden rounded-lg shadow-md">
+                <div id="carousel-track" class="flex w-full h-full transition-transform duration-500 ease-in-out">
+                    <img src="./images/C1.jpg" alt="matchu pichu" class="w-full h-full object-cover shrink-0">
+                    <img src="./images/C2.jpg" alt="greek village" class="w-full h-full object-cover shrink-0">
+                    <img src="./images/C3.jpg" alt="mexican beech" class="w-full h-full object-cover shrink-0">
                 </div>
             </div>
             
@@ -76,19 +87,20 @@
     
     
 
-        <section class="flex flex-col md:flex-row m-4 p-4 w-full gap-8">
-            <div class="w-full md:w-[800px] h-auto object-cover rounded-xl">
-                <img src="images/lightbulb.jpg" class="p-4 rounded-xl p-4">
+        <section class="my-4 md:my-8 mx-2 md:mx-auto max-w-[1200px] flex flex-col gap-2 items-center md:flex-row md:gap-4 md:justify-center md:items-start">
+            <div>
+                <img src="images/lightbulb.jpg" 
+                class="md:flex-1 rounded-xl">
             </div>
 
-            <div class ="flex-1 max-w-[600px] justify-center">
-                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p class="p-2 text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div class ="border-4 border-slate-800 rounded-lg md:flex-1 ">
+                <p class="p-2 text-sm md:p-4 md:text-lg">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p class="p-2 text-sm md:p-4 md:text-lg">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                
             </div>
         </section>
 
-        <section class="mx-12 pb-4 border-4 border-slate-900 rounded-lg">
+        <section class="max-w-[1200px] mx-2 md:mx-auto pb-4 border-4 border-slate-900 rounded-lg">
 
             <h2 class="text-center text-2xl font-bold p-2">Sponser text</h2>
 
@@ -134,7 +146,7 @@
                 <form id="contact-form" class="flex flex-col gap-2">
                     
                     <div class="flex">
-                        <label for="contact-title" class="w-24">Title</label>
+                        <label for="contact-title" class="w-full">Title</label>
                         <select id="contact-title" 
                                 type="text" 
                                 name="contact-title" 
@@ -153,43 +165,48 @@
                         <input id="contact-name" 
                                type="text" 
                                name="contact-name" 
-                               class="w-64 rounded-lg" required>
+                               class="py-1 px-2 w-full rounded-lg" 
+                               required>
                     </div>
                     
                     
                     <div class="flex">
                         <label for="contact-email" class="w-24">Email</label>
-                        <div>
-                            <input id="contact-email" 
+                        
+                        <input id="contact-email" 
                                    type="email" 
                                    name="contact-email" 
-                                   class="w-64 rounded-lg"
+                                   class="py-1 px-2 w-full rounded-lg"
                                    required>
-                            <div class="hidden">Error</div>
-                        </div>
+
+                            
+                        
                     </div>
                     
-                    <div>
+                    <div class="flex flex-col">
                         <label for="message-text">Message</label>
-                        <input id="message-text" type="textarea" 
-                            name="message-text" 
-                            aria-describedby="message-text"
-                            required>
+                        <textarea id="message-text" 
+                                  rows="4"
+                                  class="w-full rounded-lg p-2"
+                                  name="message-text" 
+                                  aria-describedby="message-text"
+                                  required></textarea>
                     </div>
 
-                    <button type="submit">Submit</button>
-
+                    <div>
+                        <button type="submit" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">Submit</button>
+                    </div>
                 </form>
             </div>
         
             <div>
-                <div><h2 class="text-2xl font-bold mb-1">Site Map</h2></div>
+                <div><h2 class="text-2xl font-bold mx-4">Site Map</h2></div>
                 <div aria-label="Site Map">
-                    <ul class="footer-menu">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="layout2.html" class="footer-link">Layout Two</a></li>
-                        <li><a href="layout3.html" class="footer-link">Layout Three</a></li>
+                    <ul class="m-4 flex flex-col gap-2">
+                        <li><a href="index.html" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">Home</a></li>
+                        <li><a href="about.html" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">About</a></li>
+                        <li><a href="layout2.html" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">Layout Two</a></li>
+                        <li><a href="layout3.html" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">Layout Three</a></li>
                     </ul>
                 </div>
             </div>

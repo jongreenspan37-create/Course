@@ -9,8 +9,10 @@ const leftBtn = document.getElementById('left-btn');
         let currentSlideIndex = 0;
 
         function updateCarouselPosition(move) {
-    
-            const amountToMove = move * 512;
+
+            const slideWidth = carouselTrack.firstElementChild.getBoundingClientRect().width;
+            console.log("Width=" + slideWidth)
+            const amountToMove = move * slideWidth;
     
             carouselTrack.style.transform = `translateX(-${amountToMove}px)`;
 
@@ -60,16 +62,22 @@ const leftBtn = document.getElementById('left-btn');
         });
 
         dot1.addEventListener('click', ()=>{
-            updateCarouselPosition(0);
+            currentSlideIndex = 0;
+            updateCarouselPosition(currentSlideIndex);
 
         });
 
         dot2.addEventListener('click', ()=>{
-            updateCarouselPosition(1);
+            currentSlideIndex = 1;
+            updateCarouselPosition(currentSlideIndex);
 
         });
 
         dot3.addEventListener('click', ()=>{
-            updateCarouselPosition(2);
+            currentSlideIndex = 2;
+            updateCarouselPosition(currentSlideIndex);
+        });
 
+        window.addEventListener('resize', () => {
+            updateCarouselPosition(currentSlideIndex);
         });
