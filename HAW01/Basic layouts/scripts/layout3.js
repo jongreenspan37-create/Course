@@ -81,3 +81,17 @@ const leftBtn = document.getElementById('left-btn');
         window.addEventListener('resize', () => {
             updateCarouselPosition(currentSlideIndex);
         });
+
+        const hamBurger = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('main-nav');
+
+        hamBurger.addEventListener('click', ()=>{
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+
+        });
+
+        navMenu.addEventListener('click', (e)=>{
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove('flex');
+        });
