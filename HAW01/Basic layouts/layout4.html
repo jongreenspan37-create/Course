@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Four</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen text text-neutral-800" font-sans>
+    <header>
+        <div class="w-full top-0 z-50 bg-slate-500 shadow-md flex items-center">
+            <div>
+                <img src="images/JRGLogo.png" 
+                      height="40" 
+                      width="160" 
+                      class="mx-2 p-2 mix-blend-multiply">
+            </div>
+
+            <div id="hamburger-container" class="my-2 md:hidden">
+                <button id="hamburger-btn" 
+                        class="mx-4 px-8 flex flex-col gap-1.5" 
+                        aria-label="Toggle menu" 
+                        aria-expanded="false" 
+                        aria-controls="mobile-menu">
+
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                <span class="h-[3px] w-8 bg-white rounded-sm border"></span>
+                </button> 
+            </div>
+            
+            <div id="main-nav" class="hidden absolute top-full z-50 p-4 bg-slate-300 md:p-0 md:static md:flex md:bg-transparent">
+                <nav class="flex ml-8" aria-label="Primary Portal">
+                    <ul class="py-1 flex flex-col items-center md:flex-row gap-3 border-2 border-slate-900 rounded-sm">
+                        <li><a href="index.html" class="py-1 px-2 text-white hover:bg-white hover:text-black rounded-sm">Home</a></li>
+                        <li><a href="about.html" class="py-1 px-2 text-white hover:bg-white hover:text-black rounded-sm">About</a></li>
+                        <li><a href="layout2.html" class="py-1 px-2 text-white hover:bg-white hover:text-black rounded-sm">Layout Two</a></li>
+                        <li><a href="layout3.html" class="py-1 px-2 text-white hover:bg-white hover:text-black rounded-sm">Layout Three</a></li>
+                        <li><a href="layout4.html" class="py-1 px-2 text-white hover:bg-white hover:text-black rounded-sm">Layout Four</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div>
+              <svg class="ml-8 w-8 h-8">
+                    <use href="images/icons.svg#icon-search"></use>
+                </svg>
+            </div>
+            
+            <div>
+                <input class="ml-4 w-48 h-8 py-1 px-2 rounded-lg md:w-96">
+            </div>
+            
+            <div >
+              <svg class="ml-8 w-8 h-8">
+                    <use href="images/icons.svg#icon-cart"></use>
+                </svg>
+            </div>
+    </header>
+    <main class="bg-slate-300 py-4 w-screen min-h-screen flex flex-col items-center">
+        
+        <section id="contact" class="mx-auto flex flex-col items-center max-w-[800px] p-4 
+                 border-2 border-slate-700 rounded-lg bg-white">
+            <div><h2 class="text-5xl font-bold">Contact Us</h2></div>
+
+            <div id="form-container" class="mt-8 p-8 border border-slate-700 rounded-lg">
+                <form class="w-[600px] grid grid-cols-2 gap-4">
+                    
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col">
+                            <label for="subject" class="font-bold">Subject *</label>
+                            <input id="subject" 
+                                type="text" 
+                                class="py-1 px-2 border border-slate-700 rounded-lg"
+                                required>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="contact-message" class="font-bold">Message *</label>
+                            <textarea id="contact-message" 
+                                    name="contact-message" 
+                                    type="text" 
+                                    rows="6"
+                                    class="border border-slate-700 rounded-lg">
+                                </textarea>
+                        </div>
+
+                        <div>
+                         <button type="submit" class="bg-blue-300 py-1 px-2 rounded-lg hover:bg-white">Submit</button>
+                        </div>
+                    
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col">
+                            <label for="first-name" class="font-bold">First Name *</label>
+                            <input id="first-name" 
+                                name="first-name" 
+                                type="text" 
+                                class="py-1 px-2 border border-slate-700 rounded-lg"
+                                required>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="surname" class="font-bold">Surname *</label>
+                            <input id="surname" 
+                                name="surname" 
+                                type="text" 
+                                class="py-1 px-2 border border-slate-700 rounded-lg"
+                                required>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="email" class="font-bold">Email *</label>
+                            <input id="email" 
+                                name="email" 
+                                type="email" 
+                                class="py-1 px-2 border border-slate-700 rounded-lg"
+                                required>
+                        </div>
+
+                    </div>
+
+                    
+
+
+                </form>
+            </div>
+            
+            
+        </section>
+        <section id="pictures">
+
+        </section><section class="max-w-[800px] mx-2 md:mx-auto pb-4">
+
+            <h2 class="text-center text-2xl font-bold p-2">Sponser text</h2>
+
+            <div class="px-4 flex gap-4 w-full justify-center rounded-lg">
+                <figure class="rounded-xl">
+                    <img src="./images/S1.JPG" alt="sponser 1" height="100" width="100">
+                    <figcaption class="text-center">Sponser 1</figcaption>
+                </figure>
+
+                <figure >
+                    <img src="./images/S2.JPG" alt="sponser 2" height="100" width="100">
+                    <figcaption class="text-center">Sponser 2</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S3.JPG" alt="sponser 3" height="100" width="100">
+                    <figcaption class="text-center">Sponser 3</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S4.JPG" alt="sponser 4" height="100" width="100">
+                    <figcaption class="text-center">Sponser 4</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./images/S5.JPG" alt="sponser 5" height="100" width="100">
+                    <figcaption class="text-center">Sponser 5</figcaption>
+                </figure>
+
+            </div>  
+
+        </section>
+    </main>
+    <script>
+        const hamBurger = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('main-nav');
+
+        hamBurger.addEventListener('click', ()=>{
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+
+        });
+
+        navMenu.addEventListener('click', (e)=>{
+            navMenu.classList.add('hidden');
+            navMenu.classList.remove('flex');
+        });
+    </script>
+</body>
+</html>
