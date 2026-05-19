@@ -39,6 +39,48 @@ function errorMessage(message){
 
 }
 
+function performCalculation(tempArray, op1, op2){
+
+    const operations = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => a / b
+    };
+
+    console.log(tempArray.length);
+    
+    for (let i=0; i < tempArray.length; i++){
+        
+        const item=tempArray[i];
+        console.log(item.type);
+        console.log(item.value);
+        if(item.type === 'operator' && (item.value === op1 || item.value === op2)){
+            const leftNum = Number(tempArray[i - 1].value);
+            const rightNum = Number(tempArray[i + 1].value);
+            const op = item.value;
+
+            let subResult = operations[op](leftNum, rightNum);
+            console.log("this is the subResult");
+            console.log(subResult);
+            
+
+            tempArray.splice(i - 1, 3, {type: 'number',value:subResult});
+
+            i -= 2;
+
+        }
+        
+        
+        
+        
+        }
+        console.log("before leaving")
+        
+        return tempArray;
+
+}
+
 //EVENT LISTNERS
 calcBody.addEventListener('click',(e)=>{
     
@@ -116,7 +158,21 @@ calcBody.addEventListener('click',(e)=>{
                     errorMessage('Last control needs to be a number')
                     return;
                 }
+
                 calcArray.push({type: 'number', value:holdingNumber});
+                holdingNumber="";
+
+                let tempArray =[...calcArray];
+                console.log("this is inside the equals case" + tempArray);
+
+                performCalculation(tempArray,"*","/");
+                console.log("after first iteration");
+                console.log(tempArray);
+                performCalculation(tempArray,"+","-");
+                console.log("after second iteration");
+                console.log(tempArray);
+
+
                 
                 
                 
