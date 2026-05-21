@@ -1,5 +1,6 @@
 //GLOBAL VARIABLES
 const calcBody = document.getElementById('calculator-body');
+const inputViewer = document.getElementById('input-viewer');
 const resultViewer =document.getElementById('result-viewer');
 const errMsg = document.getElementById('error-message')
 const calcArray=[];
@@ -7,6 +8,7 @@ const arrayDebugViewer = document.getElementById('array-debug-viewer');
 
 
 let holdingNumber = "";
+let previousNumber ="";
 let lastType ="";
 let resultStatus = false;
 
@@ -15,14 +17,17 @@ let resultStatus = false;
 //FUNCTIONS
 
 //Visual only addition to calc
-function addToResultViewer(value){
-    resultViewer.textContent += value;
+function addToInputViewer(value){
+    inputViewer.textContent += value;
 }
 
 //remove last digit
-function removeLastOperator(){
-    resultViewer.textContent = resultViewer.textContent.slice(0, -1);
+function removeLastItem(){
+    inputViewer.textContent = inputViewer.textContent.slice(0, -1);
     calcArray.pop();
+    inputViewer.textContent = calcArray.map(item=> item.value).join("")
+    console.log("holding number")
+    console.log(holdingNumber);
 }
 
 //error messages in viewer
@@ -81,7 +86,7 @@ calcBody.addEventListener('click',(e)=>{
 
     if (resultStatus){
 
-        resultViewer.textContent = "";
+        inputViewer.textContent = "";
         calcArray.length = 0
         resultStatus = false;
 
@@ -92,17 +97,29 @@ calcBody.addEventListener('click',(e)=>{
     
 
         switch (btnType){
-            case 'clear':
+            case 'memory-clear':
               
-                resultViewer.textContent ="";
+                inputViewer.textContent ="";
                 calcArray.length = 0;
                 holdingNumber="";
                 lastType="";
                 break;
 
-            case 'plus-minus':
-
-                console.log(`case button type = ${btnType} with a value of ${btnValue}`);
+            case 'clear':
+                if(lastType === 'number'){
+                    holdingNumber = holdingNumber.slice(0, -1);
+                    inputViewer.textContent = inputViewer.textContent.slice(0, -1);
+                    console.log('route1')
+                    console.log(holdingNumber)
+                
+                }else if (lastType === 'operator'){
+                    console.log('route2')
+                    console.log(holdingNumber)
+                    removeLastItem()
+                    lastType= 'number'
+                    
+                }
+                
                 break;
 
             case 'operator':
@@ -114,17 +131,22 @@ calcBody.addEventListener('click',(e)=>{
                 }
                 else if(lastType === 'operator'){
                     
-                    removeLastOperator();
+                    errorMessage("Use 'C' if you want to change the sign or add a number");
+                    return;
+                    
+                    
+                    removeLastItem();
                     calcArray.push({type:btnType, value:btnValue});
-                    addToResultViewer(btnValue);
+                    addToInputViewer(btnValue);
                     lastType=btnType;
     
                 }
                 else{
                     
-                    addToResultViewer(btnValue);
+                    addToInputViewer(btnValue);
                     calcArray.push({type: 'number', value:holdingNumber});
                     calcArray.push({type:btnType, value:btnValue});
+                    previousNumber = holdingNumber
                     holdingNumber="";
                     lastType=btnType;
                                     
@@ -136,13 +158,13 @@ calcBody.addEventListener('click',(e)=>{
                 
                 holdingNumber += btnValue;
                 lastType = 'number';
-                addToResultViewer(btnValue);
-                
+                addToInputViewer(btnValue);
+                console.log(holdingNumber)
                 break;
 
             case 'point':
                 
-                addToResultViewer(btnValue);
+                addToInputViewer(btnValue);
                 break;
           
             case 'percentage':
@@ -167,7 +189,7 @@ calcBody.addEventListener('click',(e)=>{
                 performCalculation(tempArray,"*","/");
                 performCalculation(tempArray,"+","-");
                 
-                resultViewer.textContent = tempArray[0].value;
+                inputViewer.textContent = tempArray[0].value;
                 
                 resultStatus = true;
 
